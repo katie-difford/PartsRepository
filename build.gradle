@@ -1,0 +1,16 @@
+group 'com.katehdiffo'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'ro.pippo', name: 'pippo-jetty', version: '1.11.0'
+    compile group: 'ro.pippo', name: 'pippo-jackson', version: '1.11.0'
+}
