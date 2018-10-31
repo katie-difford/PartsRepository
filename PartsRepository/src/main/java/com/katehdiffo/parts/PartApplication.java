@@ -2,30 +2,43 @@ package com.katehdiffo.parts;
 
 import ro.pippo.core.Application;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.LongStream;
+
 public class PartApplication extends Application {
+    private static final Iterator<Long> ids = LongStream.iterate(1, i -> i + 1).iterator();
+    private final static List<Part> parts = new ArrayList<>();
 
     @Override
     protected void onInit() {
-        GET("/", routeContext -> {
-            routeContext.json().send(new Blah("kateh", 22));
+        GET("/api/parts", routeContext -> {
+            routeContext.json().send(parts);
         });
-    }
 
-    public static class Blah {
-        private final String name;
-        private final int age;
+        GET("/api/parts/{id}", routeContext -> {
+            // retrieve some parameters from request
+            long id = routeContext.getParameter("id").toLong(0);
 
-        public Blah(String name, int age) {
-            this.name = name;
-            this.age = age;
-        }
+            Optional<Part> foundPart = parts.stream()
+                    .filter(part -> part.getId() == id)
+                    .findAny();
 
-        public String getName() {
-            return name;
-        }
+            if (foundPart.isPresent()) {
+                routeContext.json().send(foundPart.get());
+            } else {
+                routeContext.status(404).send("Part not found");
+            }
 
-        public int getAge() {
-            return age;
-        }
+        });
+
+        POST("/api/parts", routeContext -> {
+            Part part = routeContext.createEntityFromBody(Part.class);
+            part.setId(ids.next());
+            parts.add(part);
+            routeContext.status(201).json().send(part);
+        });
     }
 }
