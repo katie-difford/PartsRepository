@@ -2,11 +2,10 @@ package com.katehdiffo.parts;
 
 import ro.pippo.core.Application;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
+import static java.lang.String.format;
+import static java.util.Collections.singletonMap;
 import static java.util.stream.LongStream.iterate;
 
 public class PartApplication extends Application {
@@ -38,7 +37,7 @@ public class PartApplication extends Application {
             if (foundPart.isPresent()) {
                 routeContext.json().send(foundPart.get());
             } else {
-                routeContext.status(404).send("Part not found");
+                routeContext.status(404).json().send(singletonMap("error", format("Part with id %d not found", id)));
             }
 
         });

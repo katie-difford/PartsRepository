@@ -68,4 +68,32 @@ public class PartApplicationTest extends PippoTest {
         response.then().body("[1].type", equalTo("PartType2"));
         response.then().body("[1].quantity", equalTo(10));
     }
+
+    @Test
+    public void returnASpecificPart() {
+        // given
+        Part part = new Part("Part1", "PartType", 5);
+        part.setId(1L);
+        parts.add(part);
+
+        // when
+        Response response = get("/api/parts/1");
+
+        // then
+        response.then().statusCode(200);
+        response.then().contentType(JSON);
+        response.then().body("id", equalTo(1));
+        response.then().body("name", equalTo("Part1"));
+        response.then().body("type", equalTo("PartType"));
+        response.then().body("quantity", equalTo(5));
+    }
+
+    @Test
+    public void return404WhenSpecifiedPartDoesNotExist() {
+        Response response = get("/api/parts/1");
+
+        response.then().statusCode(404);
+        response.then().contentType(JSON);
+        response.then().body("error", equalTo("Part with id 1 not found"));
+    }
 }

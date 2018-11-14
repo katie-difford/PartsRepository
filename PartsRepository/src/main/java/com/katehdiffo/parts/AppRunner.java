@@ -10,6 +10,7 @@ public class AppRunner {
         Pippo pippo = new Pippo(new PartApplication(new ArrayList<>()));
         pippo.getServer().setPort(2211);
         pippo.start();
+        System.out.println("Running yeh");
     }
 
 }
