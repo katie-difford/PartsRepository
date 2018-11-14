@@ -6,13 +6,16 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.LongStream;
 
 import static java.util.stream.LongStream.iterate;
 
 public class PartApplication extends Application {
     private static final Iterator<Long> ids = iterate(1, i -> i + 1).iterator();
-    private final static List<Part> parts = new ArrayList<>();
+    private final List<Part> parts;
+
+    public PartApplication(List<Part> parts) {
+        this.parts = parts;
+    }
 
     @Override
     protected void onInit() {

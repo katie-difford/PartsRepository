@@ -12,7 +12,7 @@ public class Part {
         // Jackson
     }
 
-    public Part(long id, String name, String type, int quantity) {
+    public Part(String name, String type, int quantity) {
         this.name = name;
         this.type = type;
         this.quantity = quantity;
