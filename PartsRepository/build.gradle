@@ -13,4 +13,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'ro.pippo', name: 'pippo-jetty', version: '1.11.0'
     compile group: 'ro.pippo', name: 'pippo-jackson', version: '1.11.0'
+    testCompile group: 'ro.pippo', name: 'pippo-test', version: '1.1.0'
 }
+
