@@ -14,6 +14,8 @@
     <orderEntry type="library" name="Gradle: ro.pippo:pippo-jackson:1.11.0" level="project" />
     <orderEntry type="library" name="Gradle: ro.pippo:pippo-test:1.1.0" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.assertj:assertj-core:3.11.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.mockito:mockito-core:2.23.0" level="project" />
     <orderEntry type="library" name="Gradle: ro.pippo:pippo-core:1.11.0" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-server:9.4.6.v20170531" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-annotations:9.4.6.v20170531" level="project" />
@@ -28,6 +30,9 @@
     <orderEntry type="library" name="Gradle: com.jayway.restassured:rest-assured:2.7.0" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-library:1.3" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy:1.9.0" level="project" />
+    <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy-agent:1.9.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.objenesis:objenesis:2.6" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-servlet:9.4.6.v20170531" level="project" />
     <orderEntry type="library" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-client:9.4.6.v20170531" level="project" />

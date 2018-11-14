@@ -3,17 +3,19 @@ package com.katehdiffo.parts;
 import ro.pippo.core.Application;
 
 import java.util.*;
+import java.util.function.Supplier;
 
 import static java.lang.String.format;
 import static java.util.Collections.singletonMap;
 import static java.util.stream.LongStream.iterate;
 
 public class PartApplication extends Application {
-    private static final Iterator<Long> ids = iterate(1, i -> i + 1).iterator();
     private final List<Part> parts;
+    private final Supplier<Long> idSupplier;
 
-    public PartApplication(List<Part> parts) {
+    public PartApplication(List<Part> parts, Supplier<Long> idSupplier) {
         this.parts = parts;
+        this.idSupplier = idSupplier;
     }
 
     @Override
@@ -44,7 +46,7 @@ public class PartApplication extends Application {
 
         POST("/api/parts", routeContext -> {
             Part part = routeContext.createEntityFromBody(Part.class);
-            part.setId(ids.next());
+            part.setId(idSupplier.get());
             parts.add(part);
             routeContext.status(201).json().send(part);
         });

@@ -1,31 +1,36 @@
 package com.katehdiffo.parts;
 
-import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Response;
-import com.sun.tools.javac.util.List;
-import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.mockito.Mockito;
 import ro.pippo.test.PippoRule;
 import ro.pippo.test.PippoTest;
 
 import java.util.ArrayList;
+import java.util.function.Supplier;
 
-import static com.jayway.restassured.http.ContentType.*;
+import static com.jayway.restassured.http.ContentType.HTML;
+import static com.jayway.restassured.http.ContentType.JSON;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 public class PartApplicationTest extends PippoTest {
 
     private static final ArrayList<Part> parts = new ArrayList<>();
+    private static Supplier<Long> ids = mock(Supplier.class);
 
     @ClassRule
-    public static PippoRule pippoRule = new PippoRule(new PartApplication(parts));
+    public static PippoRule pippoRule = new PippoRule(new PartApplication(parts, ids));
 
     @Before
     public void setUp() throws Exception {
         parts.clear();
+
+        Mockito.when(ids.get()).thenReturn(1L);
     }
 
     @Test
@@ -95,5 +100,66 @@ public class PartApplicationTest extends PippoTest {
         response.then().statusCode(404);
         response.then().contentType(JSON);
         response.then().body("error", equalTo("Part with id 1 not found"));
+    }
+
+    @Test
+    public void createAPart() {
+        Response response= given()
+                .contentType(JSON)
+                .body("{\n" +
+                        "  \"name\": \"name\",\n" +
+                        "  \"type\": \"type\",\n" +
+                        "  \"quantity\": 1\n" +
+                        "}")
+                .post("/api/parts");
+
+        response.then().statusCode(201);
+        response.then().contentType(JSON);
+        response.then().body("id", equalTo(1));
+        response.then().body("name", equalTo("name"));
+        response.then().body("type", equalTo("type"));
+        response.then().body("quantity", equalTo(1));
+
+        final Part expectedPart = new Part("name", "type", 1);
+        expectedPart.setId(1);
+
+        assertThat(parts).containsExactly(expectedPart);
+    }
+
+    @Test
+    public void createMultiplePartsGetSequentialIds() {
+        Mockito.when(ids.get()).thenReturn(1L).thenReturn(50L);
+
+        given()
+                .contentType(JSON)
+                .body("{\n" +
+                        "  \"name\": \"name1\",\n" +
+                        "  \"type\": \"type1\",\n" +
+                        "  \"quantity\": 1\n" +
+                        "}")
+                .post("/api/parts");
+
+        Response response= given()
+                .contentType(JSON)
+                .body("{\n" +
+                        "  \"name\": \"name2\",\n" +
+                        "  \"type\": \"type2\",\n" +
+                        "  \"quantity\": 2\n" +
+                        "}")
+                .post("/api/parts");
+
+        response.then().statusCode(201);
+        response.then().contentType(JSON);
+        response.then().body("id", equalTo(50));
+        response.then().body("name", equalTo("name2"));
+        response.then().body("type", equalTo("type2"));
+        response.then().body("quantity", equalTo(2));
+
+        final Part expectedPart1 = new Part("name1", "type1", 1);
+        expectedPart1.setId(1);
+        final Part expectedPart2 = new Part("name2", "type2", 2);
+        expectedPart2.setId(50);
+
+        assertThat(parts).containsExactly(expectedPart1,expectedPart2);
     }
 }
