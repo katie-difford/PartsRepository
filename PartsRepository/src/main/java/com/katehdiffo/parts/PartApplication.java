@@ -8,12 +8,18 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.LongStream;
 
+import static java.util.stream.LongStream.iterate;
+
 public class PartApplication extends Application {
-    private static final Iterator<Long> ids = LongStream.iterate(1, i -> i + 1).iterator();
+    private static final Iterator<Long> ids = iterate(1, i -> i + 1).iterator();
     private final static List<Part> parts = new ArrayList<>();
 
     @Override
     protected void onInit() {
+        GET("/hello", routeContext -> {
+            routeContext.send("Hello World");
+        });
+
         GET("/api/parts", routeContext -> {
             routeContext.json().send(parts);
         });
