@@ -104,7 +104,7 @@ public class PartApplicationTest extends PippoTest {
 
     @Test
     public void createAPart() {
-        Response response= given()
+        Response response = given()
                 .contentType(JSON)
                 .body("{\n" +
                         "  \"name\": \"name\",\n" +
@@ -139,7 +139,7 @@ public class PartApplicationTest extends PippoTest {
                         "}")
                 .post("/api/parts");
 
-        Response response= given()
+        Response response = given()
                 .contentType(JSON)
                 .body("{\n" +
                         "  \"name\": \"name2\",\n" +
@@ -160,6 +160,46 @@ public class PartApplicationTest extends PippoTest {
         final Part expectedPart2 = new Part("name2", "type2", 2);
         expectedPart2.setId(50);
 
-        assertThat(parts).containsExactly(expectedPart1,expectedPart2);
+        assertThat(parts).containsExactly(expectedPart1, expectedPart2);
     }
+
+    @Test
+    public void ignorePartIdIfIdIsPassedIn() {
+        Mockito.when(ids.get()).thenReturn(1L).thenReturn(2L);
+
+        given()
+                .contentType(JSON)
+                .body("{\n" +
+                        "  \"name\": \"name1\",\n" +
+                        "  \"type\": \"type1\",\n" +
+                        "  \"quantity\": 1\n" +
+                        "}")
+                .post("/api/parts");
+
+        Response response = given()
+                .contentType(JSON)
+                .body("{\n" +
+                        "  \"id\": \"1\",\n" +
+                        "  \"name\": \"name2\",\n" +
+                        "  \"type\": \"type2\",\n" +
+                        "  \"quantity\": 2\n" +
+                        "}")
+                .post("/api/parts");
+
+        response.then().statusCode(201);
+        response.then().contentType(JSON);
+        response.then().body("id", equalTo(2));
+        response.then().body("name", equalTo("name2"));
+        response.then().body("type", equalTo("type2"));
+        response.then().body("quantity", equalTo(2));
+
+        final Part expectedPart1 = new Part("name1", "type1", 1);
+        expectedPart1.setId(1);
+        final Part expectedPart2 = new Part("name2", "type2", 2);
+        expectedPart2.setId(2);
+
+        assertThat(parts).containsExactly(expectedPart1, expectedPart2);
+    }
+
+
 }
