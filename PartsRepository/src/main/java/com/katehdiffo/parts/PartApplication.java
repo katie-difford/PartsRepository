@@ -1,24 +1,21 @@
 package com.katehdiffo.parts;
 
+import com.katehdiffo.parts.web.Response;
 import ro.pippo.core.Application;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Supplier;
 
 import static java.lang.String.format;
 import static java.util.Collections.singletonMap;
-import static ro.pippo.core.util.StringUtils.isNullOrEmpty;
 
 public class PartApplication extends Application {
     private final List<Part> parts;
-    private final Supplier<Long> idSupplier;
-    private final PartValidator partValidator;
+    private final CreatePartService createPartService;
 
-    public PartApplication(List<Part> parts, Supplier<Long> idSupplier, PartValidator partValidator) {
+    public PartApplication(List<Part> parts, CreatePartService createPartService) {
         this.parts = parts;
-        this.idSupplier = idSupplier;
-        this.partValidator = partValidator;
+        this.createPartService = createPartService;
     }
 
     @Override
@@ -48,17 +45,10 @@ public class PartApplication extends Application {
         });
 
         POST("/api/parts", routeContext -> {
-            Part part = routeContext.createEntityFromBody(Part.class);
-            part.setId(idSupplier.get());
-
-            final Optional<String> validationErrors = partValidator.validate(part);
-
-            if (validationErrors.isPresent()) {
-                routeContext.status(400).json().send(singletonMap("error", validationErrors.get()));
-            } else {
-                parts.add(part);
-                routeContext.status(201).json().send(part);
-            }
+            final Response response = createPartService.create(routeContext.getRequest());
+            routeContext.getResponse()
+                    .status(response.getStatusCode())
+                    .json(response.getBody());
         });
     }
 }

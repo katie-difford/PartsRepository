@@ -25,7 +25,7 @@ public class PartApplicationTest extends PippoTest {
     private static final PartValidator partValidator = new PartValidator();
 
     @ClassRule
-    public static PippoRule pippoRule = new PippoRule(new PartApplication(parts, ids, partValidator));
+    public static PippoRule pippoRule = new PippoRule(new PartApplication(parts, new CreatePartService(parts, ids, partValidator)));
 
     @Before
     public void setUp() throws Exception {
@@ -215,5 +215,20 @@ public class PartApplicationTest extends PippoTest {
         response.then().statusCode(400);
         response.then().contentType(JSON);
         response.then().body("error", equalTo("Missing required field(s): name"));
+    }
+
+    @Test
+    public void return400WhenFieldHasWrongInputType() {
+        Response response = given()
+                .contentType(JSON)
+                .body("{\n" +
+                        "  \"name\": \"name2\",\n" +
+                        "  \"type\": type,\n" +
+                        "  \"quantity\": 1\n" +
+                        "}")
+                .post("/api/parts");
+        response.then().statusCode(400);
+        response.then().contentType(JSON);
+        response.then().body("error", equalTo("Invalid part"));
     }
 }
