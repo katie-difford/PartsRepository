@@ -23,9 +23,10 @@ public class PartApplicationTest extends PippoTest {
     private static final ArrayList<Part> parts = new ArrayList<>();
     private static Supplier<Long> ids = mock(Supplier.class);
     private static final PartValidator partValidator = new PartValidator();
+    private static final PartRepository partRepository = new InMemoryPartRepository(parts, ids);
 
     @ClassRule
-    public static PippoRule pippoRule = new PippoRule(new PartApplication(parts, new CreatePartService(parts, ids, partValidator)));
+    public static PippoRule pippoRule = new PippoRule(new PartApplication(partRepository, new CreatePartService(partRepository, partValidator)));
 
     @Before
     public void setUp() throws Exception {
@@ -124,7 +125,7 @@ public class PartApplicationTest extends PippoTest {
         final Part expectedPart = new Part("name", "type", 1);
         expectedPart.setId(1);
 
-        assertThat(parts).containsExactly(expectedPart);
+        assertThat(partRepository.getAll()).containsExactly(expectedPart);
     }
 
     @Test
@@ -161,7 +162,7 @@ public class PartApplicationTest extends PippoTest {
         final Part expectedPart2 = new Part("name2", "type2", 2);
         expectedPart2.setId(50);
 
-        assertThat(parts).containsExactly(expectedPart1, expectedPart2);
+        assertThat(partRepository.getAll()).containsExactly(expectedPart1, expectedPart2);
     }
 
     @Test
@@ -199,7 +200,7 @@ public class PartApplicationTest extends PippoTest {
         final Part expectedPart2 = new Part("name2", "type2", 2);
         expectedPart2.setId(2);
 
-        assertThat(parts).containsExactly(expectedPart1, expectedPart2);
+        assertThat(partRepository.getAll()).containsExactly(expectedPart1, expectedPart2);
     }
 
     @Test

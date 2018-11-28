@@ -16,31 +16,31 @@ import java.util.List;
 import static java.util.Collections.singletonMap;
 import static java.util.Optional.of;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static ro.pippo.core.HttpConstants.StatusCode.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CreatePartServiceTest {
 
+    @Mock private PartRepository partRepository;
     @Mock private PartValidator partValidator;
     @Mock private Request request;
     @Mock private PippoRuntimeException pippoRuntimeException;
     @Mock private JsonParseException jsonParseException;
 
-    private List<Part> parts;
     private Part part;
 
     private CreatePartService underTest;
 
     @Before
     public void setUp() throws Exception {
-        parts = new ArrayList<>();
         part = new Part("Name", "Type", 2211);
         part.setId(1);
 
         when(request.createEntityFromBody(Part.class)).thenReturn(part);
 
-        underTest = new CreatePartService(parts, () -> 1L, partValidator);
+        underTest = new CreatePartService(partRepository, partValidator);
     }
 
     @Test
@@ -55,7 +55,7 @@ public class CreatePartServiceTest {
     public void createSavesPart() {
         underTest.create(request);
 
-        assertThat(parts).containsOnly(part);
+        verify(partRepository).save(part);
     }
 
     @Test

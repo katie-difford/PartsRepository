@@ -3,18 +3,17 @@ package com.katehdiffo.parts;
 import com.katehdiffo.parts.web.Response;
 import ro.pippo.core.Application;
 
-import java.util.List;
 import java.util.Optional;
 
 import static java.lang.String.format;
 import static java.util.Collections.singletonMap;
 
 public class PartApplication extends Application {
-    private final List<Part> parts;
+    private final PartRepository partRepository;
     private final CreatePartService createPartService;
 
-    public PartApplication(List<Part> parts, CreatePartService createPartService) {
-        this.parts = parts;
+    public PartApplication(PartRepository partRepository, CreatePartService createPartService) {
+        this.partRepository = partRepository;
         this.createPartService = createPartService;
     }
 
@@ -25,16 +24,14 @@ public class PartApplication extends Application {
         });
 
         GET("/api/parts", routeContext -> {
-            routeContext.json().send(parts);
+            routeContext.json().send(partRepository.getAll());
         });
 
         GET("/api/parts/{id}", routeContext -> {
             // retrieve some parameters from request
             long id = routeContext.getParameter("id").toLong(0);
 
-            Optional<Part> foundPart = parts.stream()
-                    .filter(part -> part.getId() == id)
-                    .findAny();
+            final Optional<Part> foundPart = partRepository.findById(id);
 
             if (foundPart.isPresent()) {
                 routeContext.json().send(foundPart.get());

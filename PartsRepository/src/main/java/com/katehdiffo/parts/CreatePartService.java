@@ -5,51 +5,25 @@ import com.katehdiffo.parts.web.Response;
 import ro.pippo.core.PippoRuntimeException;
 import ro.pippo.core.Request;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.function.Supplier;
 
 import static com.katehdiffo.parts.web.Response.response;
 import static java.util.Collections.singletonMap;
-import static ro.pippo.core.HttpConstants.StatusCode.BAD_REQUEST;
-import static ro.pippo.core.HttpConstants.StatusCode.CREATED;
-import static ro.pippo.core.HttpConstants.StatusCode.INTERNAL_ERROR;
+import static ro.pippo.core.HttpConstants.StatusCode.*;
 
 public class CreatePartService {
 
-    private final List<Part> parts;
-    private final Supplier<Long> idSupplier;
+    private final PartRepository partRepository;
     private final PartValidator partValidator;
 
-    public CreatePartService(List<Part> parts, Supplier<Long> idSupplier, PartValidator partValidator) {
-        this.parts = parts;
-        this.idSupplier = idSupplier;
+    public CreatePartService(PartRepository partRepository, PartValidator partValidator) {
+        this.partRepository = partRepository;
         this.partValidator = partValidator;
     }
 
     public Response create(Request request) {
-//        try {
-//            final Part part = routeContext.createEntityFromBody(Part.class);
-//            part.setId(idSupplier.get());
-//
-//            final Optional<String> validationErrors = partValidator.validate(part);
-//
-//            if (validationErrors.isPresent()) {
-//                routeContext.status(400).json().send(singletonMap("error", validationErrors.get()));
-//            } else {
-//                parts.add(part);
-//                routeContext.status(201).json().send(part);
-//            }
-//        } catch (PippoRuntimeException e) {
-//            final Throwable cause = e.getCause();
-//            if (cause instanceof JsonParseException) {
-//                routeContext.status(400).json().send(singletonMap("error", "Invalid part"));
-//            }
-//        }
-
         try {
             final Part part = request.createEntityFromBody(Part.class);
-            part.setId(idSupplier.get());
 
             final Optional<String> validationErrors = partValidator.validate(part);
 
@@ -57,7 +31,7 @@ public class CreatePartService {
                 return response(BAD_REQUEST, singletonMap("error", validationErrors.get()));
             }
 
-            parts.add(part);
+            partRepository.save(part);
 
             return response(CREATED, part);
         } catch (PippoRuntimeException e) {

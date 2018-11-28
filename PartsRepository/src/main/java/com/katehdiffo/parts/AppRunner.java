@@ -9,11 +9,18 @@ import static java.util.stream.LongStream.iterate;
 
 public class AppRunner {
 
-    private static final Iterator<Long> ids = iterate(1, i -> i + 1).iterator();
-
     public static void main(String[] args) {
         final PartValidator partValidator = new PartValidator();
-        Pippo pippo = new Pippo(new PartApplication(new ArrayList<>(), new CreatePartService(new ArrayList<>(), ids::next, partValidator)));
+        final InMemoryPartRepository partRepository = new InMemoryPartRepository();
+        Pippo pippo = new Pippo(
+                new PartApplication(
+                        partRepository,
+                        new CreatePartService(
+                                partRepository,
+                                partValidator
+                        )
+                )
+        );
         pippo.getServer().setPort(2211);
         pippo.start();
         System.out.println("Running yeh");
