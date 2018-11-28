@@ -47,5 +47,17 @@ public class PartApplication extends Application {
                     .status(response.getStatusCode())
                     .json(response.getBody());
         });
+
+        PATCH("/api/parts/{id}", routeContext -> {
+            long id = routeContext.getParameter("id").toLong(0);
+
+            final Optional<Part> foundPart = partRepository.findById(id);
+
+            routeContext.send(foundPart.get());
+
+            final Response response = createPartService.update(routeContext.getRequest());
+            routeContext.getResponse().status(response.getStatusCode())
+                    .json(response.getBody());
+        });
     }
 }

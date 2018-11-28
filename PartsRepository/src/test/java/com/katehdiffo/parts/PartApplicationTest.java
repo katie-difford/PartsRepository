@@ -232,4 +232,27 @@ public class PartApplicationTest extends PippoTest {
         response.then().contentType(JSON);
         response.then().body("error", equalTo("Invalid part"));
     }
+
+    @Test
+    public void updateNameFieldOfAPreExistingPart() {
+        Part firstPart = new Part("FirstName", "Type1", 1);
+
+        partRepository.save(firstPart);
+
+        Response response = given()
+                .contentType(JSON)
+                .body("{\n" +
+                        "  \"name\": \"SecondName\",\n" +
+                        "  \"type\": Type1\n" +
+                        "  \"quantity\": 1\n" +
+                        "}")
+                .patch("/api/parts/1");
+
+        response.then().statusCode(200);
+        response.then().contentType(JSON);
+        response.then().body("id", equalTo(1));
+        response.then().body("name", equalTo("SecondName"));
+        response.then().body("type", equalTo("Type1"));
+        response.then().body("quantity", equalTo(1));
+    }
 }

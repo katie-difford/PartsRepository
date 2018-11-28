@@ -42,4 +42,9 @@ public class InMemoryPartRepository implements PartRepository {
         part.setId(idSupplier.get());
         parts.add(part);
     }
+
+    @Override
+    public void update(Part part) {
+
+    }
 }

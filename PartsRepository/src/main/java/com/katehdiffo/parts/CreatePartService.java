@@ -44,4 +44,12 @@ public class CreatePartService {
             return response(INTERNAL_ERROR, singletonMap("error", e.getMessage()));
         }
     }
+
+    public Response update(Request request) {
+        final Part part = request.createEntityFromBody(Part.class);
+
+        partRepository.update(part);
+
+        return response(CREATED, "Part updated");
+    }
 }
