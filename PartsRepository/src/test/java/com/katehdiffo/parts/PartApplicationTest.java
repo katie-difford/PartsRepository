@@ -22,9 +22,10 @@ public class PartApplicationTest extends PippoTest {
 
     private static final ArrayList<Part> parts = new ArrayList<>();
     private static Supplier<Long> ids = mock(Supplier.class);
+    private static final PartValidator partValidator = new PartValidator();
 
     @ClassRule
-    public static PippoRule pippoRule = new PippoRule(new PartApplication(parts, ids));
+    public static PippoRule pippoRule = new PippoRule(new PartApplication(parts, ids, partValidator));
 
     @Before
     public void setUp() throws Exception {
@@ -201,17 +202,8 @@ public class PartApplicationTest extends PippoTest {
         assertThat(parts).containsExactly(expectedPart1, expectedPart2);
     }
 
-
     @Test
-    public void return400IfOneOrMoreFieldsAreMissing() {
-        given()
-                .contentType(JSON)
-                .body("{\n" +
-                        "  \"name\": \"name1\",\n" +
-                        "  \"quantity\": 1\n" +
-                        "}")
-                .post("/api/parts");
-
+    public void return400IfAFieldIsMissing() {
         Response response = given()
                 .contentType(JSON)
                 .body("{\n" +
@@ -222,6 +214,6 @@ public class PartApplicationTest extends PippoTest {
 
         response.then().statusCode(400);
         response.then().contentType(JSON);
-        response.then().body("error", equalTo("One or more fields is missing"));
+        response.then().body("error", equalTo("Missing required field(s): name"));
     }
 }

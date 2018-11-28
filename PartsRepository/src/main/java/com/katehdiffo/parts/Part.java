@@ -6,13 +6,13 @@ public class Part {
     private long id;
     private String name;
     private String type;
-    private int quantity;
+    private Integer quantity;
 
     public Part() {
         // Jackson
     }
 
-    public Part(String name, String type, int quantity) {
+    public Part(String name, String type, Integer quantity) {
         this.name = name;
         this.type = type;
         this.quantity = quantity;
@@ -42,11 +42,11 @@ public class Part {
         this.type = type;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 

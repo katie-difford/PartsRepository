@@ -2,21 +2,23 @@ package com.katehdiffo.parts;
 
 import ro.pippo.core.Application;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 import static java.lang.String.format;
-import static java.lang.String.valueOf;
 import static java.util.Collections.singletonMap;
 import static ro.pippo.core.util.StringUtils.isNullOrEmpty;
 
 public class PartApplication extends Application {
     private final List<Part> parts;
     private final Supplier<Long> idSupplier;
+    private final PartValidator partValidator;
 
-    public PartApplication(List<Part> parts, Supplier<Long> idSupplier) {
+    public PartApplication(List<Part> parts, Supplier<Long> idSupplier, PartValidator partValidator) {
         this.parts = parts;
         this.idSupplier = idSupplier;
+        this.partValidator = partValidator;
     }
 
     @Override
@@ -49,24 +51,14 @@ public class PartApplication extends Application {
             Part part = routeContext.createEntityFromBody(Part.class);
             part.setId(idSupplier.get());
 
-            if (oneOrMoreFieldsMissing(part)) {
-                routeContext.status(400).json().send(singletonMap("error", format("One or more fields is missing")));
+            final Optional<String> validationErrors = partValidator.validate(part);
+
+            if (validationErrors.isPresent()) {
+                routeContext.status(400).json().send(singletonMap("error", validationErrors.get()));
             } else {
                 parts.add(part);
                 routeContext.status(201).json().send(part);
             }
         });
-    }
-
-    private boolean oneOrMoreFieldsMissing(Part part) {
-        boolean nameIsNotPresent = isNullOrEmpty(part.getName());
-        boolean typeIsNotPresent = isNullOrEmpty(part.getType());
-        boolean quantityIsNotPresent = isNullOrEmpty(valueOf(part.getQuantity()));
-
-        if (nameIsNotPresent || typeIsNotPresent || quantityIsNotPresent) {
-            return true;
-        } else {
-            return false;
-        }
     }
 }
