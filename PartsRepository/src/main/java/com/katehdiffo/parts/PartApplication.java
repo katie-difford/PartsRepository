@@ -6,8 +6,9 @@ import java.util.*;
 import java.util.function.Supplier;
 
 import static java.lang.String.format;
+import static java.lang.String.valueOf;
 import static java.util.Collections.singletonMap;
-import static java.util.stream.LongStream.iterate;
+import static ro.pippo.core.util.StringUtils.isNullOrEmpty;
 
 public class PartApplication extends Application {
     private final List<Part> parts;
@@ -39,7 +40,7 @@ public class PartApplication extends Application {
             if (foundPart.isPresent()) {
                 routeContext.json().send(foundPart.get());
             } else {
-                routeContext.status(404).json().send(singletonMap("error", format("Part with id %d not found", id)));
+                routeContext.status(404).json().send(singletonMap("error", format("Part with id %s not found", id)));
             }
 
         });
@@ -47,8 +48,25 @@ public class PartApplication extends Application {
         POST("/api/parts", routeContext -> {
             Part part = routeContext.createEntityFromBody(Part.class);
             part.setId(idSupplier.get());
-            parts.add(part);
-            routeContext.status(201).json().send(part);
+
+            if (oneOrMoreFieldsMissing(part)) {
+                routeContext.status(400).json().send(singletonMap("error", format("One or more fields is missing")));
+            } else {
+                parts.add(part);
+                routeContext.status(201).json().send(part);
+            }
         });
+    }
+
+    private boolean oneOrMoreFieldsMissing(Part part) {
+        boolean nameIsNotPresent = isNullOrEmpty(part.getName());
+        boolean typeIsNotPresent = isNullOrEmpty(part.getType());
+        boolean quantityIsNotPresent = isNullOrEmpty(valueOf(part.getQuantity()));
+
+        if (nameIsNotPresent || typeIsNotPresent || quantityIsNotPresent) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

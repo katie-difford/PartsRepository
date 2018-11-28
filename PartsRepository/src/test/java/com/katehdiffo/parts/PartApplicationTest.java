@@ -202,4 +202,26 @@ public class PartApplicationTest extends PippoTest {
     }
 
 
+    @Test
+    public void return400IfOneOrMoreFieldsAreMissing() {
+        given()
+                .contentType(JSON)
+                .body("{\n" +
+                        "  \"name\": \"name1\",\n" +
+                        "  \"quantity\": 1\n" +
+                        "}")
+                .post("/api/parts");
+
+        Response response = given()
+                .contentType(JSON)
+                .body("{\n" +
+                        "  \"type\": \"type1\",\n" +
+                        "  \"quantity\": 1\n" +
+                        "}")
+                .post("/api/parts");
+
+        response.then().statusCode(400);
+        response.then().contentType(JSON);
+        response.then().body("error", equalTo("One or more fields is missing"));
+    }
 }
