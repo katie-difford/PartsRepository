@@ -51,9 +51,9 @@ public class PartApplication extends Application {
         PATCH("/api/parts/{id}", routeContext -> {
             long id = routeContext.getParameter("id").toLong(0);
 
-            final Part part = routeContext.createEntityFromBody(Part.class);
+            final Part updatedPart = routeContext.createEntityFromBody(Part.class);
 
-            final Response response = createPartService.update(id, part);
+            final Response response = createPartService.update(id, updatedPart);
 
             routeContext.getResponse().status(response.getStatusCode())
                     .json(response.getBody());

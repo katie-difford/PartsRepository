@@ -253,27 +253,27 @@ public class PartApplicationTest extends PippoTest {
         response.then().body("type", equalTo("Type1"));
         response.then().body("quantity", equalTo(1));
     }
-//
-//    @Test
-//    public void updateAllFieldsOfAPreExistingPart() {
-//        Part firstPart = new Part("FirstName", "Type1", 1);
-//
-//        partRepository.save(firstPart);
-//
-//        Response response = given()
-//                .contentType(JSON)
-//                .body("{\n" +
-//                        "  \"name\": \"SecondName\"\n" +
-//                        "  \"type\": \"Type2\"\n" +
-//                        "  \"quantity\": 5\n" +
-//                        "}")
-//                .patch("/api/parts/1");
-//
-//        response.then().statusCode(200);
-//        response.then().contentType(JSON);
-//        response.then().body("id", equalTo(1));
-//        response.then().body("name", equalTo("SecondName"));
-//        response.then().body("type", equalTo("Type2"));
-//        response.then().body("quantity", equalTo(5));
-//    }
+
+    @Test
+    public void updateAllFieldsOfAPreExistingPart() {
+        Part firstPart = new Part("AnotherPart", "Type1", 1);
+
+        partRepository.save(firstPart);
+
+        Response response = given()
+                .contentType(JSON)
+                .body("{\n" +
+                        "  \"name\": \"SecondName\",\n" +
+                        "  \"type\": \"Type2\",\n" +
+                        "  \"quantity\": 5\n" +
+                        "}")
+                .patch("/api/parts/1");
+
+        response.then().statusCode(200);
+        response.then().contentType(JSON);
+        response.then().body("id", equalTo(1));
+        response.then().body("name", equalTo("SecondName"));
+        response.then().body("type", equalTo("Type2"));
+        response.then().body("quantity", equalTo(5));
+    }
 }

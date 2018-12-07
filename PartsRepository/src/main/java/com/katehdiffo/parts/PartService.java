@@ -10,6 +10,7 @@ import java.util.Optional;
 import static com.katehdiffo.parts.web.Response.response;
 import static java.util.Collections.singletonMap;
 import static ro.pippo.core.HttpConstants.StatusCode.*;
+import static ro.pippo.core.util.StringUtils.isNullOrEmpty;
 
 public class PartService {
 
@@ -50,7 +51,21 @@ public class PartService {
 
         Part part = foundPart.get();
 
-        part.setName(partWithUpdatedFields.getName());
+        String updatedName = partWithUpdatedFields.getName();
+        String updatedType = partWithUpdatedFields.getType();
+        Integer updatedQuantity = partWithUpdatedFields.getQuantity();
+
+        if(!isNullOrEmpty(updatedName)) {
+            part.setName(updatedName);
+        }
+
+        if(!isNullOrEmpty(updatedType)) {
+            part.setType(updatedType);
+        }
+
+        if(updatedQuantity != null) {
+            part.setQuantity(updatedQuantity);
+        }
 
         return response(OK, part);
     }

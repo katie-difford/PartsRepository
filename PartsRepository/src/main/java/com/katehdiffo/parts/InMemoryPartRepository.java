@@ -14,7 +14,6 @@ public class InMemoryPartRepository implements PartRepository {
 
     private final List<Part> parts;
     private final Supplier<Long> idSupplier;
-    private final PartRepository partRepository = null;
 
     public InMemoryPartRepository(List<Part> parts, Supplier<Long> idSupplier) {
         this.parts = parts;
