@@ -12,6 +12,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 import static com.katehdiffo.parts.web.Response.response;
+import static java.lang.String.format;
 import static java.util.Collections.singletonMap;
 import static ro.pippo.core.HttpConstants.StatusCode.*;
 import static ro.pippo.core.util.StringUtils.isNullOrEmpty;
@@ -53,13 +54,17 @@ public class PartService {
     public Response update(Long id, Part partWithUpdatedFields) {
         Optional<Part> foundPart = partRepository.findById(id);
 
-        Part part = foundPart.get();
+        if (foundPart.isPresent()) {
+            Part part = foundPart.get();
 
-        updateField(partWithUpdatedFields::getName, part::setName, field -> !isNullOrEmpty(field));
-        updateField(partWithUpdatedFields::getType, part::setType, field -> !isNullOrEmpty(field));
-        updateField(partWithUpdatedFields::getQuantity, part::setQuantity, Objects::nonNull);
+            updateField(partWithUpdatedFields::getName, part::setName, field -> !isNullOrEmpty(field));
+            updateField(partWithUpdatedFields::getType, part::setType, field -> !isNullOrEmpty(field));
+            updateField(partWithUpdatedFields::getQuantity, part::setQuantity, Objects::nonNull);
 
-        return response(OK, part);
+            return response(OK, part);
+        } else {
+            return response(NOT_FOUND, singletonMap("error", format("Part with id %s not found", id)));
+        }
     }
 
     private <T> void updateField(Supplier<T> newField, Consumer<T> fieldSetter, Predicate<T> fieldShouldBeSet) {

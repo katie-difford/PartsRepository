@@ -252,6 +252,8 @@ public class PartApplicationTest extends PippoTest {
         response.then().body("name", equalTo("SecondName"));
         response.then().body("type", equalTo("Type1"));
         response.then().body("quantity", equalTo(1));
+
+        assertThat(firstPart.getName()).isEqualTo("SecondName");
     }
 
     @Test
@@ -275,5 +277,25 @@ public class PartApplicationTest extends PippoTest {
         response.then().body("name", equalTo("SecondName"));
         response.then().body("type", equalTo("Type2"));
         response.then().body("quantity", equalTo(5));
+
+        assertThat(firstPart.getName()).isEqualTo("SecondName");
+        assertThat(firstPart.getType()).isEqualTo("Type2");
+        assertThat(firstPart.getQuantity()).isEqualTo(5);
+    }
+
+    @Test
+    public void return404IfPartIsNotPresent() {
+        Response response = given()
+                .contentType(JSON)
+                .body("{\n" +
+                        "  \"name\": \"SecondName\",\n" +
+                        "  \"type\": \"Type2\",\n" +
+                        "  \"quantity\": 5\n" +
+                        "}")
+                .patch("/api/parts/1");
+
+        response.then().statusCode(404);
+        response.then().contentType(JSON);
+        response.then().body("error", equalTo("Part with id 1 not found"));
     }
 }
