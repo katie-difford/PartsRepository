@@ -5,7 +5,11 @@ import com.katehdiffo.parts.web.Response;
 import ro.pippo.core.PippoRuntimeException;
 import ro.pippo.core.Request;
 
+import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 import static com.katehdiffo.parts.web.Response.response;
 import static java.util.Collections.singletonMap;
@@ -51,22 +55,17 @@ public class PartService {
 
         Part part = foundPart.get();
 
-        String updatedName = partWithUpdatedFields.getName();
-        String updatedType = partWithUpdatedFields.getType();
-        Integer updatedQuantity = partWithUpdatedFields.getQuantity();
-
-        if(!isNullOrEmpty(updatedName)) {
-            part.setName(updatedName);
-        }
-
-        if(!isNullOrEmpty(updatedType)) {
-            part.setType(updatedType);
-        }
-
-        if(updatedQuantity != null) {
-            part.setQuantity(updatedQuantity);
-        }
+        updateField(partWithUpdatedFields::getName, part::setName, field -> !isNullOrEmpty(field));
+        updateField(partWithUpdatedFields::getType, part::setType, field -> !isNullOrEmpty(field));
+        updateField(partWithUpdatedFields::getQuantity, part::setQuantity, Objects::nonNull);
 
         return response(OK, part);
+    }
+
+    private <T> void updateField(Supplier<T> newField, Consumer<T> fieldSetter, Predicate<T> fieldShouldBeSet) {
+        T field = newField.get();
+        if (fieldShouldBeSet.test(field)) {
+            fieldSetter.accept(field);
+        }
     }
 }
