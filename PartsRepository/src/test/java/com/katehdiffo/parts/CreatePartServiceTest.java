@@ -10,9 +10,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import ro.pippo.core.PippoRuntimeException;
 import ro.pippo.core.Request;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static java.util.Collections.singletonMap;
 import static java.util.Optional.of;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -31,7 +28,7 @@ public class CreatePartServiceTest {
 
     private Part part;
 
-    private CreatePartService underTest;
+    private PartService underTest;
 
     @Before
     public void setUp() throws Exception {
@@ -40,7 +37,7 @@ public class CreatePartServiceTest {
 
         when(request.createEntityFromBody(Part.class)).thenReturn(part);
 
-        underTest = new CreatePartService(partRepository, partValidator);
+        underTest = new PartService(partRepository, partValidator);
     }
 
     @Test

@@ -10,9 +10,9 @@ import static java.util.Collections.singletonMap;
 
 public class PartApplication extends Application {
     private final PartRepository partRepository;
-    private final CreatePartService createPartService;
+    private final PartService createPartService;
 
-    public PartApplication(PartRepository partRepository, CreatePartService createPartService) {
+    public PartApplication(PartRepository partRepository, PartService createPartService) {
         this.partRepository = partRepository;
         this.createPartService = createPartService;
     }
@@ -51,11 +51,10 @@ public class PartApplication extends Application {
         PATCH("/api/parts/{id}", routeContext -> {
             long id = routeContext.getParameter("id").toLong(0);
 
-            final Optional<Part> foundPart = partRepository.findById(id);
+            final Part part = routeContext.createEntityFromBody(Part.class);
 
-            routeContext.send(foundPart.get());
+            final Response response = createPartService.update(id, part);
 
-            final Response response = createPartService.update(routeContext.getRequest());
             routeContext.getResponse().status(response.getStatusCode())
                     .json(response.getBody());
         });

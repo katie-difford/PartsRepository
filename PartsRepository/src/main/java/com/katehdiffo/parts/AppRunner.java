@@ -2,11 +2,6 @@ package com.katehdiffo.parts;
 
 import ro.pippo.core.Pippo;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import static java.util.stream.LongStream.iterate;
-
 public class AppRunner {
 
     public static void main(String[] args) {
@@ -15,7 +10,7 @@ public class AppRunner {
         Pippo pippo = new Pippo(
                 new PartApplication(
                         partRepository,
-                        new CreatePartService(
+                        new PartService(
                                 partRepository,
                                 partValidator
                         )

@@ -11,12 +11,12 @@ import static com.katehdiffo.parts.web.Response.response;
 import static java.util.Collections.singletonMap;
 import static ro.pippo.core.HttpConstants.StatusCode.*;
 
-public class CreatePartService {
+public class PartService {
 
     private final PartRepository partRepository;
     private final PartValidator partValidator;
 
-    public CreatePartService(PartRepository partRepository, PartValidator partValidator) {
+    public PartService(PartRepository partRepository, PartValidator partValidator) {
         this.partRepository = partRepository;
         this.partValidator = partValidator;
     }
@@ -45,11 +45,13 @@ public class CreatePartService {
         }
     }
 
-    public Response update(Request request) {
-        final Part part = request.createEntityFromBody(Part.class);
+    public Response update(Long id, Part partWithUpdatedFields) {
+        Optional<Part> foundPart = partRepository.findById(id);
 
-        partRepository.update(part);
+        Part part = foundPart.get();
 
-        return response(CREATED, "Part updated");
+        part.setName(partWithUpdatedFields.getName());
+
+        return response(OK, part);
     }
 }

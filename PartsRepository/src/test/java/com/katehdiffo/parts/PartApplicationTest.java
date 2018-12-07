@@ -26,7 +26,7 @@ public class PartApplicationTest extends PippoTest {
     private static final PartRepository partRepository = new InMemoryPartRepository(parts, ids);
 
     @ClassRule
-    public static PippoRule pippoRule = new PippoRule(new PartApplication(partRepository, new CreatePartService(partRepository, partValidator)));
+    public static PippoRule pippoRule = new PippoRule(new PartApplication(partRepository, new PartService(partRepository, partValidator)));
 
     @Before
     public void setUp() throws Exception {
@@ -234,7 +234,7 @@ public class PartApplicationTest extends PippoTest {
     }
 
     @Test
-    public void updateNameFieldOfAPreExistingPart() {
+    public void updateOneFieldOfAPreExistingPart() {
         Part firstPart = new Part("FirstName", "Type1", 1);
 
         partRepository.save(firstPart);
@@ -242,9 +242,7 @@ public class PartApplicationTest extends PippoTest {
         Response response = given()
                 .contentType(JSON)
                 .body("{\n" +
-                        "  \"name\": \"SecondName\",\n" +
-                        "  \"type\": Type1\n" +
-                        "  \"quantity\": 1\n" +
+                        "  \"name\": \"SecondName\"\n" +
                         "}")
                 .patch("/api/parts/1");
 
@@ -255,4 +253,27 @@ public class PartApplicationTest extends PippoTest {
         response.then().body("type", equalTo("Type1"));
         response.then().body("quantity", equalTo(1));
     }
+//
+//    @Test
+//    public void updateAllFieldsOfAPreExistingPart() {
+//        Part firstPart = new Part("FirstName", "Type1", 1);
+//
+//        partRepository.save(firstPart);
+//
+//        Response response = given()
+//                .contentType(JSON)
+//                .body("{\n" +
+//                        "  \"name\": \"SecondName\"\n" +
+//                        "  \"type\": \"Type2\"\n" +
+//                        "  \"quantity\": 5\n" +
+//                        "}")
+//                .patch("/api/parts/1");
+//
+//        response.then().statusCode(200);
+//        response.then().contentType(JSON);
+//        response.then().body("id", equalTo(1));
+//        response.then().body("name", equalTo("SecondName"));
+//        response.then().body("type", equalTo("Type2"));
+//        response.then().body("quantity", equalTo(5));
+//    }
 }
