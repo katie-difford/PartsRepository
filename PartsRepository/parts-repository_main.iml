@@ -10,6 +10,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: ro.pippo:pippo-jetty:1.11.0" level="project" />
     <orderEntry type="library" name="Gradle: ro.pippo:pippo-jackson:1.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.0" level="project" />
     <orderEntry type="library" name="Gradle: ro.pippo:pippo-core:1.11.0" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-server:9.4.6.v20170531" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-annotations:9.4.6.v20170531" level="project" />
