@@ -23,18 +23,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc9a2e76-48e3-46d9-a0dd-9f77df65566b" name="Default" comment="Katie - test to update all fields of a part">
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/katehdiffo/parts/AppRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/katehdiffo/parts/AppRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/katehdiffo/parts/PartApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/katehdiffo/parts/PartApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/parts-repository-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/parts-repository-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/katehdiffo/parts/PartApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/katehdiffo/parts/PartApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parts-repository.iml" beforeDir="false" afterPath="$PROJECT_DIR$/parts-repository.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parts-repository.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/parts-repository.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parts-repository.iws" beforeDir="false" afterPath="$PROJECT_DIR$/parts-repository.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parts-repository_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/parts-repository_main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parts-repository_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/parts-repository_test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/CreatePartServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/CreatePartServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartValidatorTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +102,7 @@
           <entry key="iml" value="2" />
           <entry key="ipr" value="1" />
           <entry key="iws" value="1" />
-          <entry key="java" value="3" />
+          <entry key="java" value="16" />
           <entry key="properties" value="2" />
         </counts>
       </usages-collector>
@@ -105,96 +112,89 @@
           <entry key="IDEA_MODULE" value="2" />
           <entry key="IDEA_PROJECT" value="1" />
           <entry key="IDEA_WORKSPACE" value="1" />
-          <entry key="JAVA" value="3" />
+          <entry key="JAVA" value="16" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="dummy" value="57" />
           <entry key="gradle" value="70" />
           <entry key="groovy" value="1" />
-          <entry key="java" value="224" />
+          <entry key="java" value="1516" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="71" />
-          <entry key="JAVA" value="224" />
+          <entry key="JAVA" value="1516" />
+          <entry key="PLAIN_TEXT" value="57" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PartApplicationTest.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartApplicationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3944">
-              <caret line="248" selection-start-line="248" selection-end-line="248" />
+            <state relative-caret-position="163">
+              <caret line="243" column="27" lean-forward="true" selection-start-line="243" selection-start-column="27" selection-end-line="243" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PartApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PartService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Predicate.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/function/Predicate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Supplier.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/function/Supplier.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Consumer.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/function/Consumer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PartValidator.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            <state relative-caret-position="195">
+              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RouteDispatcher.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/route/RouteDispatcher.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="169" selection-start-line="169" selection-end-line="169" />
+            <state relative-caret-position="175">
+              <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartValidatorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+              <folding>
+                <marker date="1545239306573" expanded="true" signature="2897:3206" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/route/DefaultRouteContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="402" selection-start-line="402" selection-end-line="402" />
             </state>
           </provider>
         </entry>
@@ -208,6 +208,11 @@
         <option value="JUnit4 Test Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>updateOneFieldOfAPreExistingPart</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -582,8 +587,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/CreatePartService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/InMemoryPartRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartApplication.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartApplicationTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartValidatorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartValidator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartApplicationTest.java" />
       </list>
     </option>
   </component>
@@ -608,6 +615,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -618,7 +627,39 @@
             <path>
               <item name="parts-repository" type="b2602c69:ProjectViewProjectNode" />
               <item name="PartsRepository" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="gradle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parts-repository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PartsRepository" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="gradle" type="462c0819:PsiDirectoryNode" />
+              <item name="wrapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parts-repository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PartsRepository" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parts-repository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PartsRepository" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="parts-repository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PartsRepository" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parts-repository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PartsRepository" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="parts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="parts-repository" type="b2602c69:ProjectViewProjectNode" />
@@ -645,15 +686,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542204470203" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545239792031" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -666,7 +705,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15277778" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -692,34 +731,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PartApplicationTest">
+  <component name="RunManager" selected="JUnit.PartApplicationTest.updateOneFieldOfAPreExistingPart">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppRunner" type="Application" factoryName="Application" singleton="true" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.katehdiffo.parts.AppRunner" />
-      <module name="parts-repository_main" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.katehdiffo.parts.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method>
-        <option name="Gradle.BeforeRunTask" enabled="true" tasks="build" externalProjectPath="$PROJECT_DIR$" vmOptions="" scriptParameters="-x test" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PartApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PartApplicationTest.return400IfNameIsEmptyWhenUpdating" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="parts-repository_test" />
       <extension name="coverage">
         <pattern>
@@ -727,43 +752,33 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.katehdiffo.parts" />
       <option name="MAIN_CLASS_NAME" value="com.katehdiffo.parts.PartApplicationTest" />
-      <option name="METHOD_NAME" value="updateAllFieldsOfAPreExistingPart" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="PartApplicationTest.updateAllFieldsOfAPreExistingPart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="parts-repository_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.katehdiffo.parts.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.katehdiffo.parts" />
-      <option name="MAIN_CLASS_NAME" value="com.katehdiffo.parts.PartApplicationTest" />
-      <option name="METHOD_NAME" value="updateAllFieldsOfAPreExistingPart" />
+      <option name="METHOD_NAME" value="return400IfNameIsEmptyWhenUpdating" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartApplicationTest.return400IfNameIsInvalidWhenUpdating" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="parts-repository_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.katehdiffo.parts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.katehdiffo.parts" />
+      <option name="MAIN_CLASS_NAME" value="com.katehdiffo.parts.PartApplicationTest" />
+      <option name="METHOD_NAME" value="return400IfNameIsInvalidWhenUpdating" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="PartApplicationTest.updateOneFieldOfAPreExistingPart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="parts-repository_test" />
@@ -773,41 +788,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.katehdiffo.parts" />
       <option name="MAIN_CLASS_NAME" value="com.katehdiffo.parts.PartApplicationTest" />
       <option name="METHOD_NAME" value="updateOneFieldOfAPreExistingPart" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.katehdiffo.parts in parts-repository_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PartValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="parts-repository_test" />
       <extension name="coverage">
         <pattern>
@@ -815,43 +806,45 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.katehdiffo.parts" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="com.katehdiffo.parts.PartValidatorTest" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartValidatorTest.validateReturnsErrorMessageWhenPartNameIsEmptyString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="parts-repository_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.katehdiffo.parts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.katehdiffo.parts" />
+      <option name="MAIN_CLASS_NAME" value="com.katehdiffo.parts.PartValidatorTest" />
+      <option name="METHOD_NAME" value="validateReturnsErrorMessageWhenPartNameIsEmptyString" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
@@ -860,24 +853,24 @@
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.AppRunner" />
-      <item itemvalue="JUnit.com.katehdiffo.parts in parts-repository_test" />
+      <item itemvalue="JUnit.PartApplicationTest.return400IfNameIsInvalidWhenUpdating" />
+      <item itemvalue="JUnit.PartApplicationTest.return400IfNameIsEmptyWhenUpdating" />
+      <item itemvalue="JUnit.PartValidatorTest" />
+      <item itemvalue="JUnit.PartValidatorTest.validateReturnsErrorMessageWhenPartNameIsEmptyString" />
       <item itemvalue="JUnit.PartApplicationTest.updateOneFieldOfAPreExistingPart" />
-      <item itemvalue="JUnit.PartApplicationTest.updateAllFieldsOfAPreExistingPart" />
-      <item itemvalue="JUnit.PartApplicationTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PartApplicationTest" />
         <item itemvalue="JUnit.PartApplicationTest.updateOneFieldOfAPreExistingPart" />
-        <item itemvalue="JUnit.PartApplicationTest.updateAllFieldsOfAPreExistingPart" />
-        <item itemvalue="JUnit.com.katehdiffo.parts in parts-repository_test" />
-        <item itemvalue="Application.AppRunner" />
+        <item itemvalue="JUnit.PartValidatorTest" />
+        <item itemvalue="JUnit.PartValidatorTest.validateReturnsErrorMessageWhenPartNameIsEmptyString" />
+        <item itemvalue="JUnit.PartApplicationTest.return400IfNameIsEmptyWhenUpdating" />
+        <item itemvalue="JUnit.PartApplicationTest.return400IfNameIsInvalidWhenUpdating" />
       </list>
     </recent_temporary>
   </component>
@@ -913,75 +906,75 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PartApplicationTest_updateOneFieldOfAPreExistingPart - 2018.12.07 at 15h 50m 27s.xml">
+    <history-entry file="PartValidatorTest - 2018.12.19 at 17h 05m 56s.xml">
+      <configuration name="PartValidatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PartValidatorTest - 2018.12.19 at 17h 06m 38s.xml">
+      <configuration name="PartValidatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PartValidatorTest - 2018.12.19 at 17h 07m 29s.xml">
+      <configuration name="PartValidatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PartValidatorTest - 2018.12.19 at 17h 08m 29s.xml">
+      <configuration name="PartValidatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PartValidatorTest_validateReturnsErrorMessageWhenPartNameIsEmptyString - 2018.12.19 at 17h 10m 27s.xml">
+      <configuration name="PartValidatorTest.validateReturnsErrorMessageWhenPartNameIsEmptyString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PartValidatorTest_validateReturnsErrorMessageWhenPartNameIsEmptyString - 2018.12.19 at 17h 11m 29s.xml">
+      <configuration name="PartValidatorTest.validateReturnsErrorMessageWhenPartNameIsEmptyString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PartValidatorTest_validateReturnsErrorMessageWhenPartNameIsEmptyString - 2018.12.19 at 17h 12m 01s.xml">
+      <configuration name="PartValidatorTest.validateReturnsErrorMessageWhenPartNameIsEmptyString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PartValidatorTest - 2018.12.19 at 17h 12m 17s.xml">
+      <configuration name="PartValidatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PartValidatorTest - 2018.12.19 at 17h 12m 36s.xml">
+      <configuration name="PartValidatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PartApplicationTest_updateOneFieldOfAPreExistingPart - 2018.12.19 at 17h 15m 20s.xml">
       <configuration name="PartApplicationTest.updateOneFieldOfAPreExistingPart" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PartApplicationTest_updateOneFieldOfAPreExistingPart - 2018.12.07 at 15h 50m 50s.xml">
-      <configuration name="PartApplicationTest.updateOneFieldOfAPreExistingPart" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PartApplicationTest_updateOneFieldOfAPreExistingPart - 2018.12.07 at 15h 51m 11s.xml">
-      <configuration name="PartApplicationTest.updateOneFieldOfAPreExistingPart" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PartApplicationTest_updateOneFieldOfAPreExistingPart - 2018.12.07 at 15h 51m 52s.xml">
-      <configuration name="PartApplicationTest.updateOneFieldOfAPreExistingPart" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PartApplicationTest_updateOneFieldOfAPreExistingPart - 2018.12.07 at 15h 52m 33s.xml">
-      <configuration name="PartApplicationTest.updateOneFieldOfAPreExistingPart" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PartApplicationTest - 2018.12.07 at 15h 55m 23s.xml">
-      <configuration name="PartApplicationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PartApplicationTest - 2018.12.07 at 16h 02m 59s.xml">
-      <configuration name="PartApplicationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PartApplicationTest - 2018.12.07 at 16h 13m 21s.xml">
-      <configuration name="PartApplicationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PartApplicationTest_updateOneFieldOfAPreExistingPart - 2018.12.07 at 16h 13m 47s.xml">
-      <configuration name="PartApplicationTest.updateOneFieldOfAPreExistingPart" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PartApplicationTest - 2018.12.07 at 16h 14m 56s.xml">
-      <configuration name="PartApplicationTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="11487000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="813" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="bottom" id="TeamCity" order="13" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.32734153" />
-      <window_info anchor="right" id="Database" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21888413" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39924315" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3282876" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33680227" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.16272469" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21884984" />
-      <window_info anchor="right" id="Gradle" order="6" weight="0.328541" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25797504" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39805827" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32734153" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.50208044" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3282876" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="TeamCity" order="13" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Gradle" order="6" weight="0.328541" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1000,43 +993,25 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="15" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartService.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/Application.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/route/RouteContext.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/route/RouteHandler.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/Pippo.java" />
     <entry file="file://$PROJECT_DIR$/src/test/randomTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/AppRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="134">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1064,17 +1039,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/Part.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/Optional.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/route/RouteDispatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="219">
+          <caret line="169" selection-start-line="169" selection-end-line="169" />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/Optional.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/function/Consumer.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/function/Supplier.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/function/Predicate.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/Part.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+        <state relative-caret-position="-753">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#492#493#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#590#591#0" expanded="true" />
+            <element signature="e#622#623#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#788#789#0" expanded="true" />
+            <element signature="e#819#820#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/route/RouteContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="308" column="17" selection-start-line="308" selection-start-column="17" selection-end-line="308" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1087,64 +1096,102 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="150">
           <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/route/RouteDispatcher.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/HttpConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="169" selection-start-line="169" selection-end-line="169" />
+        <state relative-caret-position="128">
+          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartValidator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/web/Response.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        <state relative-caret-position="195">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartApplicationTest.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/util/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3944">
-          <caret line="248" selection-start-line="248" selection-end-line="248" />
+        <state relative-caret-position="109">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          <folding>
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="237">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/function/Consumer.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ro.pippo/pippo-core/1.11.0/13f47346cc601b17442be51b3306d0bf015c5528/pippo-core-1.11.0-sources.jar!/ro/pippo/core/route/DefaultRouteContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        <state relative-caret-position="274">
+          <caret line="402" selection-start-line="402" selection-end-line="402" />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/function/Supplier.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.4.6.v20170531/b7d66f6e439ed1d868c10051e9a522fb88ee05e5/jetty-util-9.4.6.v20170531-sources.jar!/org/eclipse/jetty/util/LazyList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        <state relative-caret-position="84">
+          <caret line="292" column="26" selection-start-line="292" selection-start-column="26" selection-end-line="292" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/function/Predicate.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.4.6.v20170531/b7d66f6e439ed1d868c10051e9a522fb88ee05e5/jetty-util-9.4.6.v20170531-sources.jar!/org/eclipse/jetty/util/StringUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+        <state relative-caret-position="294">
+          <caret line="467" column="13" lean-forward="true" selection-start-line="467" selection-start-column="13" selection-end-line="467" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartValidatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <marker date="1545239306573" expanded="true" signature="2897:3206" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="175">
+          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/katehdiffo/parts/PartValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/katehdiffo/parts/PartApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="243" column="27" lean-forward="true" selection-start-line="243" selection-start-column="27" selection-end-line="243" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1188,7 +1235,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8.0_51</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

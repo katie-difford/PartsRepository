@@ -3,6 +3,7 @@ package com.katehdiffo.parts;
 import com.jayway.restassured.response.Response;
 import org.junit.Before;
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mockito;
 import ro.pippo.test.PippoRule;
@@ -233,6 +234,7 @@ public class PartApplicationTest extends PippoTest {
         response.then().body("error", equalTo("Invalid part"));
     }
 
+    @Ignore
     @Test
     public void updateOneFieldOfAPreExistingPart() {
         Part firstPart = new Part("FirstName", "Type1", 1);

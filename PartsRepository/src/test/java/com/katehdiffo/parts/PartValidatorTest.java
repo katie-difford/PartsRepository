@@ -20,7 +20,7 @@ public class PartValidatorTest {
     public void validateReturnsEmptyIfPartIsValid() {
         Part part = new Part("Name", "Type", 3);
 
-        final Optional<String> error = underTest.validate(part);
+        final Optional<String> error = underTest.validateForCreate(part);
 
         assertThat(error).isEmpty();
     }
@@ -29,25 +29,25 @@ public class PartValidatorTest {
     public void validateReturnsErrorMessageWhenPartNameIsEmptyString() {
         Part part = new Part("", "Type", 4);
 
-        final Optional<String> error = underTest.validate(part);
+        final Optional<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("Missing required field(s): name");
+        assertThat(error).contains("The following fields are empty: name");
     }
 
     @Test
     public void validateReturnsErrorMessageWhenPartNameIsBlank() {
         Part part = new Part("                  ", "Type", 4);
 
-        final Optional<String> error = underTest.validate(part);
+        final Optional<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("Missing required field(s): name");
+        assertThat(error).contains("The following fields are empty: name");
     }
 
     @Test
     public void validateReturnsErrorMessageWhenPartNameIsNull() {
         Part part = new Part(null, "Type", 4);
 
-        final Optional<String> error = underTest.validate(part);
+        final Optional<String> error = underTest.validateForCreate(part);
 
         assertThat(error).contains("Missing required field(s): name");
     }
@@ -56,25 +56,25 @@ public class PartValidatorTest {
     public void validateReturnsErrorMessageWhenPartTypeIsEmptyString() {
         Part part = new Part("Name", "", 4);
 
-        final Optional<String> error = underTest.validate(part);
+        final Optional<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("Missing required field(s): type");
+        assertThat(error).contains("The following fields are empty: type");
     }
 
     @Test
     public void validateReturnsErrorMessageWhenPartTypeIsBlank() {
         Part part = new Part("Name", "              ", 4);
 
-        final Optional<String> error = underTest.validate(part);
+        final Optional<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("Missing required field(s): type");
+        assertThat(error).contains("The following fields are empty: type");
     }
 
     @Test
     public void validateReturnsErrorMessageWhenPartTypeIsNull() {
         Part part = new Part("Name", null, 4);
 
-        final Optional<String> error = underTest.validate(part);
+        final Optional<String> error = underTest.validateForCreate(part);
 
         assertThat(error).contains("Missing required field(s): type");
     }
@@ -83,7 +83,7 @@ public class PartValidatorTest {
     public void validateReturnsErrorMessageWhenPartQuantityIsNull() {
         Part part = new Part("Name", "Type", null);
 
-        final Optional<String> error = underTest.validate(part);
+        final Optional<String> error = underTest.validateForCreate(part);
 
         assertThat(error).contains("Missing required field(s): quantity");
     }
@@ -92,8 +92,17 @@ public class PartValidatorTest {
     public void validateReturnsErrorMessageWhenMultipleFieldsAreMissing() {
         Part part = new Part(null, null, null);
 
-        final Optional<String> error = underTest.validate(part);
+        final Optional<String> error = underTest.validateForCreate(part);
 
         assertThat(error).contains("Missing required field(s): name, type, quantity");
     }
+//
+//    @Test
+//    public void validateReturnsNoErrorsWhenUpdatingOneFieldOfAPart() {
+//        Part part = new Part(null, null, null);
+//
+//        final Optional<String> error = underTest.validateForCreate(part);
+//
+//        assertThat(error).contains("Missing required field(s): name, type, quantity");
+//    }
 }

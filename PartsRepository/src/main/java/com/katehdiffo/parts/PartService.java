@@ -31,7 +31,7 @@ public class PartService {
         try {
             final Part part = request.createEntityFromBody(Part.class);
 
-            final Optional<String> validationErrors = partValidator.validate(part);
+            final Optional<String> validationErrors = partValidator.validateForCreate(part);
 
             if (validationErrors.isPresent()) {
                 return response(BAD_REQUEST, singletonMap("error", validationErrors.get()));
@@ -57,9 +57,15 @@ public class PartService {
         if (foundPart.isPresent()) {
             Part part = foundPart.get();
 
-            updateField(partWithUpdatedFields::getName, part::setName, field -> !isNullOrEmpty(field));
-            updateField(partWithUpdatedFields::getType, part::setType, field -> !isNullOrEmpty(field));
-            updateField(partWithUpdatedFields::getQuantity, part::setQuantity, Objects::nonNull);
+            final Optional<String> validationErrors = partValidator.validateForCreate(partWithUpdatedFields);
+
+            if (validationErrors.isPresent()) {
+                return response(BAD_REQUEST, singletonMap("error", validationErrors.get()));
+            } else {
+                updateField(partWithUpdatedFields::getName, part::setName, field -> !isNullOrEmpty(field));
+                updateField(partWithUpdatedFields::getType, part::setType, field -> !isNullOrEmpty(field));
+                updateField(partWithUpdatedFields::getQuantity, part::setQuantity, Objects::nonNull);
+            }
 
             return response(OK, part);
         } else {

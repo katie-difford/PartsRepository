@@ -57,7 +57,7 @@ public class CreatePartServiceTest {
 
     @Test
     public void createReturnsBadRequestResponseIfPartIsInvalid() {
-        when(partValidator.validate(part)).thenReturn(of("validationError"));
+        when(partValidator.validateForCreate(part)).thenReturn(of("validationError"));
 
         final Response response = underTest.create(request);
 
