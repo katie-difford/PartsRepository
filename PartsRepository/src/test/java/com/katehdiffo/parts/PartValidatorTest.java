@@ -96,13 +96,13 @@ public class PartValidatorTest {
 
         assertThat(error).contains("Missing required field(s): name, type, quantity");
     }
-//
-//    @Test
-//    public void validateReturnsNoErrorsWhenUpdatingOneFieldOfAPart() {
-//        Part part = new Part(null, null, null);
-//
-//        final Optional<String> error = underTest.validateForCreate(part);
-//
-//        assertThat(error).contains("Missing required field(s): name, type, quantity");
-//    }
+
+    @Test
+    public void validateReturnsNoErrorsWhenUpdatingOneFieldOfAPart() {
+        Part part = new Part("   ", "   ", null);
+
+        final Optional<String> error = underTest.validateForUpdate(part);
+
+        assertThat(error).contains("The following fields are empty: name, type");
+    }
 }
