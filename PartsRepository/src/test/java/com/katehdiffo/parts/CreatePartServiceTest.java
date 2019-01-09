@@ -12,6 +12,7 @@ import ro.pippo.core.Request;
 
 import static java.util.Collections.singletonList;
 import static java.util.Collections.singletonMap;
+import static java.util.Optional.empty;
 import static java.util.Optional.of;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
@@ -96,12 +97,21 @@ public class CreatePartServiceTest {
     @Test
     public void updateReturnsBadRequestResponseIfUpdatedPartIsInvalid() {
         when(partRepository.findById(1L)).thenReturn(of(part));
-
         when(partValidator.validateForUpdate(part)).thenReturn(singletonList("Empty field: name"));
 
         final Response response = underTest.update(part.getId(), part);
 
         assertThat(response.getStatusCode()).isEqualTo(BAD_REQUEST);
         assertThat(response.getBody()).isEqualTo(singletonMap("error", "Invalid part: [Empty field: name]"));
+    }
+
+    @Test
+    public void deleteReturnsBadRequestIfPartRequestedDoesNotExist() {
+        when(partRepository.findById(1L)).thenReturn(empty());
+
+        final Response response = underTest.delete(part.getId());
+
+        assertThat(response.getStatusCode()).isEqualTo(NOT_FOUND);
+        assertThat(response.getBody()).isEqualTo(singletonMap("error", "Part with id 1 not found"));
     }
 }

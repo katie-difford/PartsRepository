@@ -52,7 +52,7 @@ class PartService {
         }
     }
 
-    public Response update(Long id, Part partWithUpdatedFields) {
+    Response update(Long id, Part partWithUpdatedFields) {
         Optional<Part> foundPart = partRepository.findById(id);
 
         if (foundPart.isPresent()) {
@@ -79,5 +79,17 @@ class PartService {
         if (fieldShouldBeSet.test(field)) {
             fieldSetter.accept(field);
         }
+    }
+
+    Response delete(long id) {
+        Optional<Part> foundPart = partRepository.findById(id);
+
+        if (foundPart.isPresent()) {
+            System.out.println("part found");
+        } else {
+            return response(NOT_FOUND, singletonMap("error", format("Part with id %s not found", id)));
+        }
+
+        return null;
     }
 }
