@@ -18,17 +18,17 @@ import static java.util.Collections.singletonMap;
 import static ro.pippo.core.HttpConstants.StatusCode.*;
 import static ro.pippo.core.util.StringUtils.isNullOrEmpty;
 
-public class PartService {
+class PartService {
 
     private final PartRepository partRepository;
     private final PartValidator partValidator;
 
-    public PartService(PartRepository partRepository, PartValidator partValidator) {
+    PartService(PartRepository partRepository, PartValidator partValidator) {
         this.partRepository = partRepository;
         this.partValidator = partValidator;
     }
 
-    public Response create(Request request) {
+    Response create(Request request) {
         try {
             final Part part = request.createEntityFromBody(Part.class);
 

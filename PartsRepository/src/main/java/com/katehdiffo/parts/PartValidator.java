@@ -8,9 +8,9 @@ import static java.util.Objects.isNull;
 import static java.util.stream.Collectors.toList;
 import static org.eclipse.jetty.util.StringUtil.isBlank;
 
-public class PartValidator {
+class PartValidator {
 
-    public List<String> validateForCreate(Part part) {
+    List<String> validateForCreate(Part part) {
         List<String> emptyFields = new ArrayList<>();
         List<String> missingFields = new ArrayList<>();
 
@@ -37,7 +37,7 @@ public class PartValidator {
 
     }
 
-    public List<String> validateForUpdate(Part part) {
+    List<String> validateForUpdate(Part part) {
         List<String> emptyFields = new ArrayList<>();
 
         if (isBlank(part.getName())) {

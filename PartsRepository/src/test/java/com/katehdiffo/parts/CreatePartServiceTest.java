@@ -12,6 +12,7 @@ import ro.pippo.core.Request;
 
 import static java.util.Collections.singletonList;
 import static java.util.Collections.singletonMap;
+import static java.util.Optional.of;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -20,11 +21,16 @@ import static ro.pippo.core.HttpConstants.StatusCode.*;
 @RunWith(MockitoJUnitRunner.class)
 public class CreatePartServiceTest {
 
-    @Mock private PartRepository partRepository;
-    @Mock private PartValidator partValidator;
-    @Mock private Request request;
-    @Mock private PippoRuntimeException pippoRuntimeException;
-    @Mock private JsonParseException jsonParseException;
+    @Mock
+    private PartRepository partRepository;
+    @Mock
+    private PartValidator partValidator;
+    @Mock
+    private Request request;
+    @Mock
+    private PippoRuntimeException pippoRuntimeException;
+    @Mock
+    private JsonParseException jsonParseException;
 
     private Part part;
 
@@ -56,7 +62,7 @@ public class CreatePartServiceTest {
     }
 
     @Test
-    public void createReturnsBadRequestResponseIfPartIsInvalid() {
+    public void createReturnsBadRequestResponseIfCreatedPartIsInvalid() {
         when(partValidator.validateForCreate(part)).thenReturn(singletonList("Missing field: name"));
 
         final Response response = underTest.create(request);
@@ -87,5 +93,15 @@ public class CreatePartServiceTest {
         assertThat(response.getBody()).isEqualTo(singletonMap("error", "boom!"));
     }
 
-    //TODO new test for update
+    @Test
+    public void updateReturnsBadRequestResponseIfUpdatedPartIsInvalid() {
+        when(partRepository.findById(1L)).thenReturn(of(part));
+
+        when(partValidator.validateForUpdate(part)).thenReturn(singletonList("Empty field: name"));
+
+        final Response response = underTest.update(part.getId(), part);
+
+        assertThat(response.getStatusCode()).isEqualTo(BAD_REQUEST);
+        assertThat(response.getBody()).isEqualTo(singletonMap("error", "Invalid part: [Empty field: name]"));
+    }
 }

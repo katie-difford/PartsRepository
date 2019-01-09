@@ -16,7 +16,7 @@ public class PartApplication extends Application {
     private final PartRepository partRepository;
     private final PartService createPartService;
 
-    public PartApplication(PartRepository partRepository, PartService createPartService) {
+    PartApplication(PartRepository partRepository, PartService createPartService) {
         this.partRepository = partRepository;
         this.createPartService = createPartService;
     }
