@@ -65,7 +65,7 @@ public class PartApplication extends Application {
                 final Throwable cause = e.getCause();
                 if (cause instanceof JsonParseException) {
                     routeContext.getResponse().status(BAD_REQUEST)
-                            .json(singletonMap("error", "Invalid part"));
+                            .json(singletonMap("error", format("Part with id %s has some fields missing", id)));
                 }
                 routeContext.getResponse().status(INTERNAL_ERROR)
                         .json(singletonMap("error", cause.getMessage()));

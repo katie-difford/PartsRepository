@@ -48,24 +48,24 @@ public class PartValidator {
     }
 
     public Optional<String> validateForUpdate(Part part) {
-        List<String> emptyFields = new ArrayList<>();
-        List<String> missingFields = new ArrayList<>();
+//        List<String> emptyFields = new ArrayList<>();
+//
+//        if (isEmpty(part.getName())) {
+//            emptyFields.add("name");
+//        }
+//
+//       if (isEmpty(part.getType())) {
+//            emptyFields.add("type");
+//        }
+//
+//        if (!emptyFields.isEmpty()) {
+//            final String formattedEmptyFields = emptyFields.stream().collect(joining(", "));
+//
+//            return Optional.of(format("The following fields are empty: %s", formattedEmptyFields));
+//        }
+//
 
-        if (isBlank(part.getName())) {
-            emptyFields.add("name");
-        }
-
-       if (isBlank(part.getType())) {
-            emptyFields.add("type");
-        }
-
-
-        if (!emptyFields.isEmpty()) {
-            final String formattedEmptyFields = emptyFields.stream().collect(joining(", "));
-
-            return Optional.of(format("The following fields are empty: %s", formattedEmptyFields));
-        }
-
+        System.out.println("Part was okay");
         return Optional.empty();
     }
 }

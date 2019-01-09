@@ -57,7 +57,7 @@ public class PartService {
         if (foundPart.isPresent()) {
             Part part = foundPart.get();
 
-            final Optional<String> validationErrors = partValidator.validateForCreate(partWithUpdatedFields);
+            final Optional<String> validationErrors = partValidator.validateForUpdate(partWithUpdatedFields);
 
             if (validationErrors.isPresent()) {
                 return response(BAD_REQUEST, singletonMap("error", validationErrors.get()));
