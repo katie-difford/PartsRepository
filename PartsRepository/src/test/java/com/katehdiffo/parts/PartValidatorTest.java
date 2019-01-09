@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,7 +22,7 @@ public class PartValidatorTest {
     public void validateReturnsEmptyIfPartIsValid() {
         Part part = new Part("Name", "Type", 3);
 
-        final Optional<String> error = underTest.validateForCreate(part);
+        final List<String> error = underTest.validateForCreate(part);
 
         assertThat(error).isEmpty();
     }
@@ -30,75 +31,75 @@ public class PartValidatorTest {
     public void validateReturnsErrorMessageWhenPartNameIsEmptyString() {
         Part part = new Part("", "Type", 4);
 
-        final Optional<String> error = underTest.validateForCreate(part);
+        final List<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("The following fields are empty: name");
+        assertThat(error).contains("Empty field: name");
     }
 
     @Test
     public void validateReturnsErrorMessageWhenPartNameIsBlank() {
         Part part = new Part("                  ", "Type", 4);
 
-        final Optional<String> error = underTest.validateForCreate(part);
+        final List<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("The following fields are empty: name");
+        assertThat(error).contains("Empty field: name");
     }
 
     @Test
     public void validateReturnsErrorMessageWhenPartNameIsNull() {
         Part part = new Part(null, "Type", 4);
 
-        final Optional<String> error = underTest.validateForCreate(part);
+        final List<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("Missing required field(s): name");
+        assertThat(error).contains("Missing field: name");
     }
 
     @Test
     public void validateReturnsErrorMessageWhenPartTypeIsEmptyString() {
         Part part = new Part("Name", "", 4);
 
-        final Optional<String> error = underTest.validateForCreate(part);
+        final List<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("The following fields are empty: type");
+        assertThat(error).contains("Empty field: type");
     }
 
     @Test
     public void validateReturnsErrorMessageWhenPartTypeIsBlank() {
         Part part = new Part("Name", "              ", 4);
 
-        final Optional<String> error = underTest.validateForCreate(part);
+        final List<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("The following fields are empty: type");
+        assertThat(error).contains("Empty field: type");
     }
 
     @Test
     public void validateReturnsErrorMessageWhenPartTypeIsNull() {
         Part part = new Part("Name", null, 4);
 
-        final Optional<String> error = underTest.validateForCreate(part);
+        final List<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("Missing required field(s): type");
+        assertThat(error).contains("Missing field: type");
     }
 
     @Test
     public void validateReturnsErrorMessageWhenPartQuantityIsNull() {
         Part part = new Part("Name", "Type", null);
 
-        final Optional<String> error = underTest.validateForCreate(part);
+        final List<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("Missing required field(s): quantity");
+        assertThat(error).contains("Missing field: quantity");
     }
 
     @Test
     public void validateReturnsErrorMessageWhenMultipleFieldsAreMissing() {
         Part part = new Part(null, null, null);
 
-        final Optional<String> error = underTest.validateForCreate(part);
+        final List<String> error = underTest.validateForCreate(part);
 
-        assertThat(error).contains("Missing required field(s): name, type, quantity");
+        assertThat(error).contains("Missing field: name", "Missing field: type", "Missing field: quantity");
     }
 
-    //TODO this test name is different to the asserts, seek clarity on this
+    //TODO validate for update
     @Ignore
     @Test
     public void validateReturnsNoErrorsWhenUpdatingOneFieldOfAPart() {

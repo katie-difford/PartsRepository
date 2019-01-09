@@ -215,7 +215,7 @@ public class PartApplicationTest extends PippoTest {
 
         response.then().statusCode(400);
         response.then().contentType(JSON);
-        response.then().body("error", equalTo("Missing required field(s): name"));
+        response.then().body("error", equalTo("Invalid part: [Missing field: name]"));
     }
 
     @Test

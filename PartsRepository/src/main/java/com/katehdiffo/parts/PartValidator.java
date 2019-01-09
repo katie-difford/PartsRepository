@@ -3,16 +3,15 @@ package com.katehdiffo.parts;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
-import static java.lang.String.format;
 import static java.util.Objects.isNull;
-import static java.util.stream.Collectors.joining;
-import static org.eclipse.jetty.util.LazyList.isEmpty;
+import static java.util.stream.Collectors.toList;
 import static org.eclipse.jetty.util.StringUtil.isBlank;
 
 public class PartValidator {
 
-    public Optional<String> validateForCreate(Part part) {
+    public List<String> validateForCreate(Part part) {
         List<String> emptyFields = new ArrayList<>();
         List<String> missingFields = new ArrayList<>();
 
@@ -32,19 +31,24 @@ public class PartValidator {
             missingFields.add("quantity");
         }
 
-        if (!missingFields.isEmpty()) {
-            final String formattedMissingFields = missingFields.stream().collect(joining(", "));
+        Stream<String> emptyStream = emptyFields.stream().map(field -> String.format("Empty field: %s", field));
+        Stream<String> missingStream = missingFields.stream().map(field -> String.format("Missing field: %s", field));
 
-            return Optional.of(format("Missing required field(s): %s", formattedMissingFields));
-        }
+        return Stream.concat(emptyStream, missingStream).collect(toList());
 
-        if (!emptyFields.isEmpty()) {
-            final String formattedEmptyFields = emptyFields.stream().collect(joining(", "));
 
-            return Optional.of(format("The following fields are empty: %s", formattedEmptyFields));
-        }
+//        if (!missingFields.isEmpty()) {
+//            final String formattedMissingFields = missingFields.stream().collect(joining(", "));
+//
+//            return Optional.of(format("Missing required field(s): %s", formattedMissingFields));
+//        }
+//
+//        if (!emptyFields.isEmpty()) {
+//            final String formattedEmptyFields = emptyFields.stream().collect(joining(", "));
+//
+//            return Optional.of(format("The following fields are empty: %s", formattedEmptyFields));
+//        }
 
-        return Optional.empty();
     }
 
     public Optional<String> validateForUpdate(Part part) {

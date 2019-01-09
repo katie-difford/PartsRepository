@@ -5,6 +5,7 @@ import com.katehdiffo.parts.web.Response;
 import ro.pippo.core.PippoRuntimeException;
 import ro.pippo.core.Request;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -31,10 +32,10 @@ public class PartService {
         try {
             final Part part = request.createEntityFromBody(Part.class);
 
-            final Optional<String> validationErrors = partValidator.validateForCreate(part);
+            final List<String> validationErrors = partValidator.validateForCreate(part);
 
-            if (validationErrors.isPresent()) {
-                return response(BAD_REQUEST, singletonMap("error", validationErrors.get()));
+            if (!validationErrors.isEmpty()) {
+                return response(BAD_REQUEST, singletonMap("error", String.format("Invalid part: %s", validationErrors)));
             }
 
             partRepository.save(part);

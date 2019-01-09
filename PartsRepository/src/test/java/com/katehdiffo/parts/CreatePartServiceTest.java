@@ -10,8 +10,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 import ro.pippo.core.PippoRuntimeException;
 import ro.pippo.core.Request;
 
+import static java.util.Collections.singletonList;
 import static java.util.Collections.singletonMap;
-import static java.util.Optional.of;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -57,12 +57,12 @@ public class CreatePartServiceTest {
 
     @Test
     public void createReturnsBadRequestResponseIfPartIsInvalid() {
-        when(partValidator.validateForCreate(part)).thenReturn(of("validationError"));
+        when(partValidator.validateForCreate(part)).thenReturn(singletonList("Missing field: name"));
 
         final Response response = underTest.create(request);
 
         assertThat(response.getStatusCode()).isEqualTo(BAD_REQUEST);
-        assertThat(response.getBody()).isEqualTo(singletonMap("error", "validationError"));
+        assertThat(response.getBody()).isEqualTo(singletonMap("error", "Invalid part: [Missing field: name]"));
     }
 
     @Test
