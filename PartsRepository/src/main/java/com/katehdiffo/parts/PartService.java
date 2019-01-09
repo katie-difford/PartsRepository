@@ -35,7 +35,7 @@ public class PartService {
             final List<String> validationErrors = partValidator.validateForCreate(part);
 
             if (!validationErrors.isEmpty()) {
-                return response(BAD_REQUEST, singletonMap("error", String.format("Invalid part: %s", validationErrors)));
+                return response(BAD_REQUEST, singletonMap("error", format("Invalid part: %s", validationErrors)));
             }
 
             partRepository.save(part);
@@ -58,10 +58,10 @@ public class PartService {
         if (foundPart.isPresent()) {
             Part part = foundPart.get();
 
-            final Optional<String> validationErrors = partValidator.validateForUpdate(partWithUpdatedFields);
+            final List<String> validationErrors = partValidator.validateForUpdate(partWithUpdatedFields);
 
-            if (validationErrors.isPresent()) {
-                return response(BAD_REQUEST, singletonMap("error", validationErrors.get()));
+            if (!validationErrors.isEmpty()) {
+                return response(BAD_REQUEST, singletonMap("error", format("Invalid part: %s", validationErrors)));
             } else {
                 updateField(partWithUpdatedFields::getName, part::setName, field -> !isNullOrEmpty(field));
                 updateField(partWithUpdatedFields::getType, part::setType, field -> !isNullOrEmpty(field));

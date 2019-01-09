@@ -314,7 +314,6 @@ public class PartApplicationTest extends PippoTest {
 
         response.then().statusCode(400);
         response.then().contentType(JSON);
-        //TODO - does this need to specify the field which is missing, or is the below error message enough.
         response.then().body("error", equalTo("Part with id 1 has some fields missing"));
     }
 }

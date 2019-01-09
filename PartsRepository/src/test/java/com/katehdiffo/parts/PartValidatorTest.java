@@ -1,11 +1,9 @@
 package com.katehdiffo.parts;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -99,14 +97,12 @@ public class PartValidatorTest {
         assertThat(error).contains("Missing field: name", "Missing field: type", "Missing field: quantity");
     }
 
-    //TODO validate for update
-    @Ignore
     @Test
     public void validateReturnsNoErrorsWhenUpdatingOneFieldOfAPart() {
         Part part = new Part("   ", "   ", null);
 
-        final Optional<String> error = underTest.validateForUpdate(part);
+        final List<String> error = underTest.validateForUpdate(part);
 
-        assertThat(error).contains("The following fields are empty: name, type");
+        assertThat(error).contains("Empty field: name", "Empty field: type");
     }
 }
