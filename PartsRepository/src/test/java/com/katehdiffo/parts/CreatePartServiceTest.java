@@ -15,8 +15,7 @@ import static java.util.Collections.singletonMap;
 import static java.util.Optional.empty;
 import static java.util.Optional.of;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static ro.pippo.core.HttpConstants.StatusCode.*;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -33,12 +32,11 @@ public class CreatePartServiceTest {
     @Mock
     private JsonParseException jsonParseException;
 
+    private PartService underTest;
     private Part part;
 
-    private PartService underTest;
-
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         part = new Part("Name", "Type", 2211);
         part.setId(1);
 
@@ -109,9 +107,14 @@ public class CreatePartServiceTest {
     public void deleteReturnsBadRequestIfPartRequestedDoesNotExist() {
         when(partRepository.findById(1L)).thenReturn(empty());
 
-        final Response response = underTest.delete(part.getId());
+        long id = part.getId();
+        final Response response = underTest.delete(id);
 
         assertThat(response.getStatusCode()).isEqualTo(NOT_FOUND);
         assertThat(response.getBody()).isEqualTo(singletonMap("error", "Part with id 1 not found"));
+
+        verify(partRepository).findById(1L);
+        verifyZeroInteractions(partValidator);
+        verifyNoMoreInteractions(partRepository);
     }
 }
