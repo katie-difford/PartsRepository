@@ -23,10 +23,6 @@ public class PartApplication extends Application {
 
     @Override
     protected void onInit() {
-        GET("/hello", routeContext -> {
-            routeContext.send("Hello World");
-        });
-
         GET("/api/parts", routeContext -> {
             routeContext.json().send(partRepository.getAll());
         });
