@@ -14,11 +14,11 @@ import static ro.pippo.core.HttpConstants.StatusCode.INTERNAL_ERROR;
 
 public class PartApplication extends Application {
     private final PartRepository partRepository;
-    private final PartService createPartService;
+    private final PartService partService;
 
-    PartApplication(PartRepository partRepository, PartService createPartService) {
+    PartApplication(PartRepository partRepository, PartService partService) {
         this.partRepository = partRepository;
-        this.createPartService = createPartService;
+        this.partService = partService;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class PartApplication extends Application {
         });
 
         POST("/api/parts", routeContext -> {
-            final Response response = createPartService.create(routeContext.getRequest());
+            final Response response = partService.create(routeContext.getRequest());
             routeContext.getResponse()
                     .status(response.getStatusCode())
                     .json(response.getBody());
@@ -57,7 +57,7 @@ public class PartApplication extends Application {
             try {
                 final Part updatedPart = routeContext.createEntityFromBody(Part.class);
 
-                final Response response = createPartService.update(id, updatedPart);
+                final Response response = partService.update(id, updatedPart);
 
                 routeContext.getResponse().status(response.getStatusCode())
                         .json(response.getBody());
@@ -79,9 +79,11 @@ public class PartApplication extends Application {
         DELETE("/api/parts/{id}", routeContext -> {
             long id = routeContext.getParameter("id").toLong(0);
 
-            createPartService.delete(id);
+            Response response = partService.delete(id);
 
-            routeContext.getResponse().status(204);
+            routeContext.getResponse()
+                    .status(response.getStatusCode())
+                    .json(response.getBody());
         });
     }
 }

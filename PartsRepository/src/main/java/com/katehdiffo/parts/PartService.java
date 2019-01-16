@@ -81,7 +81,7 @@ class PartService {
             partRepository.delete(foundPart.get());
             return response(NO_RESPONSE, null);
         } else {
-            return response(NOT_FOUND, singletonMap("error", format("Part with id %s not found", id)));
+            return response(NOT_FOUND, singletonMap("error", format("Part with id %s does not exist", id)));
         }
     }
 

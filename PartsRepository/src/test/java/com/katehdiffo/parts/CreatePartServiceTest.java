@@ -104,14 +104,14 @@ public class CreatePartServiceTest {
     }
 
     @Test
-    public void deleteReturnsBadRequestIfPartRequestedDoesNotExist() {
+    public void deleteReturnsNotFoundIfPartRequestedDoesNotExist() {
         when(partRepository.findById(1L)).thenReturn(empty());
 
         long id = part.getId();
         final Response response = underTest.delete(id);
 
         assertThat(response.getStatusCode()).isEqualTo(NOT_FOUND);
-        assertThat(response.getBody()).isEqualTo(singletonMap("error", "Part with id 1 not found"));
+        assertThat(response.getBody()).isEqualTo(singletonMap("error", "Part with id 1 does not exist"));
 
         verify(partRepository).findById(1L);
         verifyZeroInteractions(partValidator);

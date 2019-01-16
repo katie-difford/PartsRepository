@@ -331,4 +331,18 @@ public class PartApplicationTest extends PippoTest {
 
         assertThat(partRepository.getAll()).doesNotContain(partToBeDeleted);
     }
+
+    @Test
+    public void return404whenDeletingAPartThatDoesNotExist() {
+        Part partToBeDeleted = new Part("PartToBeDeleted", "Type1", 1);
+
+        partRepository.save(partToBeDeleted);
+
+        Response response = given()
+                .contentType(JSON)
+                .delete("/api/parts/10");
+
+        response.then().statusCode(404);
+        response.then().body("error", equalTo("Part with id 10 does not exist"));
+    }
 }
