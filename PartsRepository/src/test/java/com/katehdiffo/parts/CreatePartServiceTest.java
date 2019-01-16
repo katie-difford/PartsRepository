@@ -127,6 +127,6 @@ public class CreatePartServiceTest {
 
         assertThat(response.getStatusCode()).isEqualTo(NO_RESPONSE);
         assertThat(response.getBody()).isNull();
-        verify(partRepository).delete(part);
+        verify(partRepository).delete(of(part));
     }
 }
