@@ -1,6 +1,11 @@
-package com.katehdiffo.parts;
+package com.katehdiffo.parts.web;
 
 import com.jayway.restassured.response.Response;
+import com.katehdiffo.parts.application.InMemoryPartRepository;
+import com.katehdiffo.parts.application.PartRepository;
+import com.katehdiffo.parts.application.PartService;
+import com.katehdiffo.parts.application.PartValidator;
+import com.katehdiffo.parts.model.Part;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;

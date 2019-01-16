@@ -1,4 +1,4 @@
-package com.katehdiffo.parts;
+package com.katehdiffo.parts.model;
 
 import java.util.Objects;
 

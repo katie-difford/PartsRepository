@@ -1,5 +1,6 @@
-package com.katehdiffo.parts;
+package com.katehdiffo.parts.application;
 
+import com.katehdiffo.parts.model.Part;
 import org.junit.Before;
 import org.junit.Test;
 

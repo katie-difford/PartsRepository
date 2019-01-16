@@ -1,6 +1,7 @@
-package com.katehdiffo.parts;
+package com.katehdiffo.parts.application;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.katehdiffo.parts.model.Part;
 import com.katehdiffo.parts.web.Response;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +20,7 @@ import static org.mockito.Mockito.*;
 import static ro.pippo.core.HttpConstants.StatusCode.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CreatePartServiceTest {
+public class PartServiceTest {
 
     @Mock
     private PartRepository partRepository;

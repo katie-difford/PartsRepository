@@ -1,6 +1,7 @@
-package com.katehdiffo.parts;
+package com.katehdiffo.parts.application;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.katehdiffo.parts.model.Part;
 import com.katehdiffo.parts.web.Response;
 import ro.pippo.core.PippoRuntimeException;
 import ro.pippo.core.Request;
@@ -18,17 +19,17 @@ import static java.util.Collections.singletonMap;
 import static ro.pippo.core.HttpConstants.StatusCode.*;
 import static ro.pippo.core.util.StringUtils.isNullOrEmpty;
 
-class PartService {
+public class PartService {
 
     private final PartRepository partRepository;
     private final PartValidator partValidator;
 
-    PartService(PartRepository partRepository, PartValidator partValidator) {
+    public PartService(PartRepository partRepository, PartValidator partValidator) {
         this.partRepository = partRepository;
         this.partValidator = partValidator;
     }
 
-    Response create(Request request) {
+    public Response create(Request request) {
         try {
             final Part part = request.createEntityFromBody(Part.class);
 
@@ -52,7 +53,7 @@ class PartService {
         }
     }
 
-    Response update(Long id, Part partWithUpdatedFields) {
+    public Response update(Long id, Part partWithUpdatedFields) {
         Optional<Part> foundPart = partRepository.findById(id);
 
         if (foundPart.isPresent()) {
@@ -74,14 +75,7 @@ class PartService {
         }
     }
 
-    private <T> void updateField(Supplier<T> newField, Consumer<T> fieldSetter, Predicate<T> fieldShouldBeSet) {
-        T field = newField.get();
-        if (fieldShouldBeSet.test(field)) {
-            fieldSetter.accept(field);
-        }
-    }
-
-    Response delete(long id) {
+    public Response delete(long id) {
         Optional<Part> foundPart = partRepository.findById(id);
 
         if (foundPart.isPresent()) {
@@ -92,4 +86,10 @@ class PartService {
         }
     }
 
+    private <T> void updateField(Supplier<T> newField, Consumer<T> fieldSetter, Predicate<T> fieldShouldBeSet) {
+        T field = newField.get();
+        if (fieldShouldBeSet.test(field)) {
+            fieldSetter.accept(field);
+        }
+    }
 }

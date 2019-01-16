@@ -1,8 +1,14 @@
 package com.katehdiffo.parts;
 
+import com.katehdiffo.parts.application.InMemoryPartRepository;
+import com.katehdiffo.parts.application.PartService;
+import com.katehdiffo.parts.application.PartValidator;
+import com.katehdiffo.parts.web.PartApplication;
 import ro.pippo.core.Pippo;
 
 public class AppRunner {
+
+    private static final int DEFAULT_PORT = 2211;
 
     public static void main(String[] args) {
         final PartValidator partValidator = new PartValidator();
@@ -16,8 +22,9 @@ public class AppRunner {
                         )
                 )
         );
-        pippo.getServer().setPort(2211);
+        pippo.getServer().setPort(DEFAULT_PORT);
         pippo.start();
-        System.out.println("Running yeh");
+
+        System.out.println("Running on port " + DEFAULT_PORT + "... yeh");
     }
 }

@@ -1,7 +1,9 @@
-package com.katehdiffo.parts;
+package com.katehdiffo.parts.web;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.katehdiffo.parts.web.Response;
+import com.katehdiffo.parts.application.PartRepository;
+import com.katehdiffo.parts.application.PartService;
+import com.katehdiffo.parts.model.Part;
 import ro.pippo.core.Application;
 import ro.pippo.core.PippoRuntimeException;
 
@@ -16,7 +18,7 @@ public class PartApplication extends Application {
     private final PartRepository partRepository;
     private final PartService partService;
 
-    PartApplication(PartRepository partRepository, PartService partService) {
+    public PartApplication(PartRepository partRepository, PartService partService) {
         this.partRepository = partRepository;
         this.partService = partService;
     }

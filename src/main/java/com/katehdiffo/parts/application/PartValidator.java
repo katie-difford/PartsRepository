@@ -1,4 +1,6 @@
-package com.katehdiffo.parts;
+package com.katehdiffo.parts.application;
+
+import com.katehdiffo.parts.model.Part;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +10,9 @@ import static java.util.Objects.isNull;
 import static java.util.stream.Collectors.toList;
 import static org.eclipse.jetty.util.StringUtil.isBlank;
 
-class PartValidator {
+public class PartValidator {
 
-    List<String> validateForCreate(Part part) {
+    public List<String> validateForCreate(Part part) {
         List<String> emptyFields = new ArrayList<>();
         List<String> missingFields = new ArrayList<>();
 
@@ -37,7 +39,7 @@ class PartValidator {
 
     }
 
-    List<String> validateForUpdate(Part part) {
+    public List<String> validateForUpdate(Part part) {
         List<String> emptyFields = new ArrayList<>();
 
         if (isBlank(part.getName())) {
