@@ -11,11 +11,9 @@ import ro.pippo.test.PippoTest;
 import java.util.ArrayList;
 import java.util.function.Supplier;
 
-import static com.jayway.restassured.http.ContentType.HTML;
 import static com.jayway.restassured.http.ContentType.JSON;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 
 public class PartApplicationTest extends PippoTest {
@@ -33,14 +31,6 @@ public class PartApplicationTest extends PippoTest {
         parts.clear();
 
         Mockito.when(ids.get()).thenReturn(1L);
-    }
-
-    @Test
-    public void testHello() {
-        Response response = get("/hello");
-        response.then().statusCode(200);
-        response.then().contentType(HTML);
-        assertEquals("Hello World", response.asString());
     }
 
     @Test
@@ -78,15 +68,12 @@ public class PartApplicationTest extends PippoTest {
 
     @Test
     public void returnASpecificPart() {
-        // given
         Part part = new Part("Part1", "PartType", 5);
         part.setId(1L);
         parts.add(part);
 
-        // when
         Response response = get("/api/parts/1");
 
-        // then
         response.then().statusCode(200);
         response.then().contentType(JSON);
         response.then().body("id", equalTo(1));
