@@ -29,7 +29,7 @@ public class PartApplicationTest extends PippoTest {
     public static PippoRule pippoRule = new PippoRule(new PartApplication(partRepository, new PartService(partRepository, partValidator)));
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         parts.clear();
 
         Mockito.when(ids.get()).thenReturn(1L);
