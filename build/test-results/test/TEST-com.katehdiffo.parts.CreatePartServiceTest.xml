@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.katehdiffo.parts.CreatePartServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-01-16T16:06:14" hostname="cheetah" time="0.061">
+  <properties/>
+  <testcase name="deleteReturns204AndDeletesPart" classname="com.katehdiffo.parts.CreatePartServiceTest" time="0.042"/>
+  <testcase name="updateReturnsBadRequestResponseIfUpdatedPartIsInvalid" classname="com.katehdiffo.parts.CreatePartServiceTest" time="0.002"/>
+  <testcase name="createSavesPart" classname="com.katehdiffo.parts.CreatePartServiceTest" time="0.001"/>
+  <testcase name="createReturnsSuccessfulResponse" classname="com.katehdiffo.parts.CreatePartServiceTest" time="0.001"/>
+  <testcase name="createReturnsBadRequestResponseIfPippoRuntimeExceptionIsThrown" classname="com.katehdiffo.parts.CreatePartServiceTest" time="0.005"/>
+  <testcase name="createReturnsBadRequestResponseIfPartCannotBeParsed" classname="com.katehdiffo.parts.CreatePartServiceTest" time="0.001"/>
+  <testcase name="createReturnsBadRequestResponseIfCreatedPartIsInvalid" classname="com.katehdiffo.parts.CreatePartServiceTest" time="0.001"/>
+  <testcase name="deleteReturnsNotFoundIfPartRequestedDoesNotExist" classname="com.katehdiffo.parts.CreatePartServiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+</testsuite>

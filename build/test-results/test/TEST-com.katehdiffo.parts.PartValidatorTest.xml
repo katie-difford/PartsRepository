@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.katehdiffo.parts.PartValidatorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2019-01-16T16:06:16" hostname="cheetah" time="0.003">
+  <properties/>
+  <testcase name="validateReturnsErrorMessageWhenMultipleFieldsAreMissing" classname="com.katehdiffo.parts.PartValidatorTest" time="0.001"/>
+  <testcase name="validateReturnsErrorMessageWhenPartTypeIsNull" classname="com.katehdiffo.parts.PartValidatorTest" time="0.001"/>
+  <testcase name="validateReturnsErrorMessageWhenPartNameIsNull" classname="com.katehdiffo.parts.PartValidatorTest" time="0.0"/>
+  <testcase name="validateReturnsErrorMessageWhenPartQuantityIsNull" classname="com.katehdiffo.parts.PartValidatorTest" time="0.0"/>
+  <testcase name="validateReturnsEmptyIfPartIsValid" classname="com.katehdiffo.parts.PartValidatorTest" time="0.0"/>
+  <testcase name="validateReturnsErrorMessageWhenPartNameIsEmptyString" classname="com.katehdiffo.parts.PartValidatorTest" time="0.0"/>
+  <testcase name="validateReturnsErrorMessageWhenPartTypeIsEmptyString" classname="com.katehdiffo.parts.PartValidatorTest" time="0.0"/>
+  <testcase name="validateReturnsNoErrorsWhenUpdatingOneFieldOfAPart" classname="com.katehdiffo.parts.PartValidatorTest" time="0.0"/>
+  <testcase name="validateReturnsErrorMessageWhenPartNameIsBlank" classname="com.katehdiffo.parts.PartValidatorTest" time="0.0"/>
+  <testcase name="validateReturnsErrorMessageWhenPartTypeIsBlank" classname="com.katehdiffo.parts.PartValidatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
