@@ -74,22 +74,21 @@ class PartService {
         }
     }
 
+    Response delete(long id) {
+        Optional<Part> foundPart = partRepository.findById(id);
+
+        if (foundPart.isPresent()) {
+            partRepository.delete(foundPart.get());
+            return response(NO_RESPONSE, null);
+        } else {
+            return response(NOT_FOUND, singletonMap("error", format("Part with id %s not found", id)));
+        }
+    }
+
     private <T> void updateField(Supplier<T> newField, Consumer<T> fieldSetter, Predicate<T> fieldShouldBeSet) {
         T field = newField.get();
         if (fieldShouldBeSet.test(field)) {
             fieldSetter.accept(field);
         }
-    }
-
-    Response delete(long id) {
-        Optional<Part> foundPart = partRepository.findById(id);
-
-        if (foundPart.isPresent()) {
-            System.out.println("part found");
-        } else {
-            return response(NOT_FOUND, singletonMap("error", format("Part with id %s not found", id)));
-        }
-
-        return null;
     }
 }

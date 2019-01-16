@@ -117,4 +117,16 @@ public class CreatePartServiceTest {
         verifyZeroInteractions(partValidator);
         verifyNoMoreInteractions(partRepository);
     }
+
+    @Test
+    public void deleteReturns204AndDeletesPart() {
+        when(partRepository.findById(1L)).thenReturn(of(part));
+
+        long id = part.getId();
+        final Response response = underTest.delete(id);
+
+        assertThat(response.getStatusCode()).isEqualTo(NO_RESPONSE);
+        assertThat(response.getBody()).isNull();
+        verify(partRepository).delete(part);
+    }
 }

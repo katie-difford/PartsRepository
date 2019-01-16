@@ -75,6 +75,14 @@ public class PartApplication extends Application {
             }
 
         });
+
+        DELETE("/api/parts/{id}", routeContext -> {
+            long id = routeContext.getParameter("id").toLong(0);
+
+            createPartService.delete(id);
+
+            routeContext.getResponse().status(204);
+        });
     }
 }
 

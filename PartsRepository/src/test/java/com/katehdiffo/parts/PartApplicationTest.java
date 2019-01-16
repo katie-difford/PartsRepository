@@ -316,4 +316,19 @@ public class PartApplicationTest extends PippoTest {
         response.then().contentType(JSON);
         response.then().body("error", equalTo("Part with id 1 has some fields missing"));
     }
+
+    @Test
+    public void deletePartWhenIdIsSpecified() {
+        Part partToBeDeleted = new Part("PartToBeDeleted", "Type1", 1);
+
+        partRepository.save(partToBeDeleted);
+
+        Response response = given()
+                .contentType(JSON)
+                .delete("/api/parts/1");
+
+        response.then().statusCode(204);
+
+        assertThat(partRepository.getAll()).doesNotContain(partToBeDeleted);
+    }
 }

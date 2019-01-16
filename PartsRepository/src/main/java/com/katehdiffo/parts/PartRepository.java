@@ -11,4 +11,5 @@ public interface PartRepository {
 
     void save(Part part);
 
+    void delete(Part foundPart);
 }
