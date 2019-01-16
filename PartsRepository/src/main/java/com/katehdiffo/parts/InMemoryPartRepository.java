@@ -44,7 +44,7 @@ public class InMemoryPartRepository implements PartRepository {
     }
 
     @Override
-    public void delete(Optional<Part> foundPart) {
+    public void delete(Part foundPart) {
         parts.remove(foundPart);
 
     }

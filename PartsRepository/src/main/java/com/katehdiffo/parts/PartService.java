@@ -92,10 +92,4 @@ class PartService {
         }
     }
 
-    private <T> void updateField(Supplier<T> newField, Consumer<T> fieldSetter, Predicate<T> fieldShouldBeSet) {
-        T field = newField.get();
-        if (fieldShouldBeSet.test(field)) {
-            fieldSetter.accept(field);
-        }
-    }
 }
